@@ -9,7 +9,7 @@
 		"preview": "vite preview",
 		"typecheck": "tsc -p tsconfig.json --noEmit",
 		"lint": "biome check .",
-		"lint:fix": "biome check --apply .",
+		"lint:fix": "biome check --write .",
 		"format": "biome format .",
 		"format:fix": "biome format --write .",
 		"storybook": "storybook dev -p 6006",
@@ -23,36 +23,31 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.2.4",
-		"@chromatic-com/storybook": "4.1.1",
 		"@eslint/js": "^9.33.0",
 		"@storybook/addon-a11y": "9.1.5",
 		"@storybook/addon-docs": "9.1.5",
-		"@storybook/addon-onboarding": "9.1.5",
-		"@storybook/addon-vitest": "9.1.5",
 		"@storybook/react-vite": "9.1.5",
 		"@types/node": "^24.3.1",
 		"@types/react": "^19.1.10",
 		"@types/react-dom": "^19.1.7",
 		"@vitejs/plugin-react-swc": "^4.0.0",
-		"@vitest/browser": "^3.2.4",
-		"@vitest/coverage-v8": "^3.2.4",
 		"eslint": "^9.33.0",
 		"eslint-plugin-react-hooks": "^5.2.0",
 		"eslint-plugin-react-refresh": "^0.4.20",
 		"eslint-plugin-storybook": "9.1.5",
 		"globals": "^16.3.0",
-		"playwright": "^1.55.0",
+		"sass": "^1.92.1",
 		"storybook": "9.1.5",
 		"typescript": "~5.8.3",
 		"typescript-eslint": "^8.39.1",
 		"vite": "^7.1.2",
-		"vite-tsconfig-paths": "^5.1.4",
-		"vitest": "^3.2.4"
+		"vite-tsconfig-paths": "^5.1.4"
 	},
 	"pnpm": {
 		"onlyBuiltDependencies": [
 			"@swc/core",
-			"esbuild"
+			"esbuild",
+			"@parcel/watcher"
 		]
 	}
 }
