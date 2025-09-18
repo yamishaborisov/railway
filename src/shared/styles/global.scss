@@ -1,0 +1,21 @@
+@import '@fontsource/poppins/400.css';
+@import '@fontsource/poppins/500.css';
+@import '@fontsource/poppins/600.css';
+
+/* Глобальный стек + swap */
+:root {
+	--font-sans: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto,
+		'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+}
+
+html,
+body,
+#root {
+	height: 100%;
+}
+body {
+	margin: 0;
+	font-family: var(--font-sans);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
