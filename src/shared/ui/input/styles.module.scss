@@ -1,0 +1,23 @@
+@use '/src/shared/styles/variables' as *;
+
+.textInputWrapper {
+	position: relative;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.input {
+	width: 272px;
+	height: 40px;
+	border-radius: 10px;
+	background: var(--BG-Gray, #f5f5f5);
+	font-family: var(--font-sans);
+	font-weight: 500;
+	font-size: 14px;
+	/* font-style: normal; */
+	/* font-weight: 500; */
+	line-height: 150%;
+	padding: 16px;
+	margin-top: 16px;
+}

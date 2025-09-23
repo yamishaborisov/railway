@@ -16,6 +16,8 @@
 		"build-storybook": "storybook build"
 	},
 	"dependencies": {
+		"@fontsource/poppins": "^5.2.7",
+		"clsx": "^2.1.1",
 		"primeicons": "^7.0.0",
 		"primereact": "^10.9.7",
 		"react": "^19.1.1",
