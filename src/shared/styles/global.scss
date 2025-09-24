@@ -1,11 +1,33 @@
-@import '@fontsource/poppins/400.css';
-@import '@fontsource/poppins/500.css';
-@import '@fontsource/poppins/600.css';
+/* Poppins 400 */
+@font-face {
+	font-family: 'Poppins';
+	src: url('/fonts/poppins/poppins-400.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
 
-/* Глобальный стек + swap */
+/* Poppins 500 */
+@font-face {
+	font-family: 'Poppins';
+	src: url('/fonts/poppins/poppins-500.woff2') format('woff2');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* Poppins 600 */
+@font-face {
+	font-family: 'Poppins';
+	src: url('/fonts/poppins/poppins-600.woff2') format('woff2');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
 :root {
 	--font-sans: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto,
-		'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+		'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
 }
 
 html,

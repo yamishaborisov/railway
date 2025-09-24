@@ -4,7 +4,7 @@ import {
 } from 'primereact/button';
 import clsx from 'clsx';
 import styles from './styles.module.scss';
-import type { ReactNode, ButtonHTMLAttributes } from 'react';
+import type { ButtonHTMLAttributes } from 'react';
 import type { Variant, Tone, Size, Density, Weight } from './types';
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -13,7 +13,7 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 	size?: Size;
 	density?: Density;
 	weight?: Weight;
-	children: ReactNode;
+	label?: string;
 };
 
 export const Button = ({
@@ -23,27 +23,18 @@ export const Button = ({
 	density = 'default',
 	weight,
 	className,
-	children,
+	label,
 	...props
 }: ButtonProps) => {
-	const sizeKey = `size${size}` as keyof typeof styles;
-
 	const rootClass = clsx(
 		styles.btn,
 		styles[variant],
 		styles[tone],
-		styles[sizeKey],
+		styles[`size${size}`],
 		weight && styles[weight],
 		density !== 'default' && styles[density],
 		className
 	);
 
-	return (
-		<PButton
-			unstyled
-			className={rootClass}
-			{...props}
-			label={typeof children === 'string' ? children : undefined}
-		/>
-	);
+	return <PButton unstyled className={rootClass} {...props} label={label} />;
 };

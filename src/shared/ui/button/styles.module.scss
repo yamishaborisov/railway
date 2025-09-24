@@ -47,7 +47,7 @@
 
 .solid {
 	&.brand {
-		background: var(--primary-blue-train);
+		background: var(--primary-blue);
 		color: var(--white);
 	}
 
@@ -62,8 +62,8 @@
 	font-size: 14px;
 
 	&.brand {
-		color: var(--primary-black-train);
-		border-color: var(--primary-blue-train);
+		color: var(--primary-black);
+		border-color: var(--primary-blue);
 	}
 
 	&.danger {
@@ -77,11 +77,11 @@
 	border-color: transparent;
 
 	&.brand {
-		color: var(--primary-blue-train);
+		color: var(--primary-blue);
 		font-size: 16px;
 	}
 	&.neutral {
-		color: var(--primary-black-train-50);
+		color: var(--primary-black-50);
 	}
 }
 
