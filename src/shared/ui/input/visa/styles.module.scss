@@ -1,0 +1,35 @@
+@use '/src/shared/styles/variables' as *;
+
+.textInputWrapper {
+	position: relative;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.input {
+	width: 272px;
+	height: 56px;
+	border-radius: 10px;
+	border: none;
+	font-family: var(--font-sans);
+	font-weight: 500;
+	font-size: 14px;
+	padding: 16px 10px;
+	margin-top: 16px;
+}
+.input::placeholder {
+	color: #90a3bf;
+}
+.label {
+	color: var(--primary-black-train);
+	font-family: Poppins;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 600;
+}
+.error {
+	border: 1px solid var(--red);
+	color: var(--red);
+	font-size: 12px;
+}

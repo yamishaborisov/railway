@@ -1,0 +1,36 @@
+@use '/src/shared/styles/variables' as *;
+
+.textInputWrapper {
+	position: relative;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.input {
+	width: 272px;
+	height: 40px;
+	border: none;
+	border-bottom: 1px solid var(--primary-black-train-50);
+	background: transparent;
+	font-family: var(--font-sans);
+	font-weight: 500;
+	font-size: 14px;
+	padding: 8px;
+	margin-top: 16px;
+}
+.input::placeholder {
+	color: var(--primary-black-train-50);
+}
+.label {
+	color: var(--primary-black-train);
+	font-family: Poppins;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 500;
+}
+.error {
+	border: 1px solid var(--red);
+	color: var(--red);
+	font-size: 12px;
+}
