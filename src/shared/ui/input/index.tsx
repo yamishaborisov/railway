@@ -1,8 +1,8 @@
 import { forwardRef, type ForwardRefExoticComponent } from 'react';
 import { PrimaryInput } from './primary';
-import type { InputProps } from './types';
 import { CodeInput } from './code';
 import { VisaInput } from './visa';
+import type { InputProps } from './types';
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
 	({ variant = 'primary', ...props }, ref) => {
