@@ -6,4 +6,5 @@ export type InputProps = {
 	error?: string;
 	success?: string;
 	inputClassName?: string;
+	ref?: React.Ref<HTMLInputElement>;
 } & Omit<InputHTMLAttributes<HTMLInputElement>, 'size'>;

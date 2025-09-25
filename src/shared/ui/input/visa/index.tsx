@@ -1,48 +1,44 @@
-import { forwardRef, useId } from 'react';
+import { useId } from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.scss';
 import type { InputProps } from '../types';
 
-export const VisaInput = forwardRef<HTMLInputElement, InputProps>(
-	(
-		{
-			label,
-			error,
-			success,
-			required,
-			onChange,
-			className,
-			inputClassName,
-			value,
-			...props
-		},
-		ref
-	) => {
-		const uniqueId = useId();
+export const VisaInput = ({
+	label,
+	error,
+	success,
+	required,
+	onChange,
+	className,
+	inputClassName,
+	value,
+	ref,
+	...props
+}: InputProps) => {
+	const uniqueId = useId();
 
-		return (
-			<div className={clsx(styles.textInputWrapper, className)}>
-				{label && (
-					<label className={styles.label} htmlFor={uniqueId}>
-						{label} {required && <span aria-hidden='true'>*</span>}
-					</label>
-				)}
+	return (
+		<div className={clsx(styles.textInputWrapper, className)}>
+			{label && (
+				<label className={styles.label} htmlFor={uniqueId}>
+					{label} {required && <span aria-hidden='true'>*</span>}
+				</label>
+			)}
 
-				<input
-					ref={ref}
-					id={uniqueId}
-					className={clsx(styles.input, inputClassName)}
-					value={value}
-					aria-invalid={!!error}
-					{...props}
-				/>
+			<input
+				ref={ref}
+				id={uniqueId}
+				className={clsx(styles.input, inputClassName)}
+				value={value}
+				aria-invalid={!!error}
+				{...props}
+			/>
 
-				{error ? (
-					<div className={styles.error}>{error}</div>
-				) : success ? (
-					<div className={styles.success}>{success}</div>
-				) : null}
-			</div>
-		);
-	}
-);
+			{error ? (
+				<div className={styles.error}>{error}</div>
+			) : success ? (
+				<div className={styles.success}>{success}</div>
+			) : null}
+		</div>
+	);
+};
