@@ -1,0 +1,43 @@
+/* Poppins 400 */
+@font-face {
+	font-family: 'Poppins';
+	src: url('/fonts/poppins/poppins-400.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* Poppins 500 */
+@font-face {
+	font-family: 'Poppins';
+	src: url('/fonts/poppins/poppins-500.woff2') format('woff2');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* Poppins 600 */
+@font-face {
+	font-family: 'Poppins';
+	src: url('/fonts/poppins/poppins-600.woff2') format('woff2');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+:root {
+	--font-sans: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto,
+		'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+}
+
+html,
+body,
+#root {
+	height: 100%;
+}
+body {
+	margin: 0;
+	font-family: var(--font-sans);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
