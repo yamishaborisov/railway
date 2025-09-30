@@ -18,7 +18,7 @@ export const CodeInput = ({
 	const uniqueId = useId();
 
 	return (
-		<div className={clsx(styles.textInputWrapper, className)}>
+		<article className={clsx(styles.textInputWrapper, className)}>
 			{label && (
 				<label className={styles.label} htmlFor={uniqueId}>
 					{label} {required && <span aria-hidden='true'>*</span>}
@@ -39,6 +39,6 @@ export const CodeInput = ({
 			) : success ? (
 				<div className={styles.success}>{success}</div>
 			) : null}
-		</div>
+		</article>
 	);
 };
