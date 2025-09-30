@@ -23,6 +23,9 @@ importers:
       react-dom:
         specifier: ^19.1.1
         version: 19.1.1(react@19.1.1)
+      react-tiny-mask:
+        specifier: ^0.0.3
+        version: 0.0.3(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
     devDependencies:
       '@biomejs/biome':
         specifier: ^2.2.4
@@ -1623,6 +1626,12 @@ packages:
 
   react-is@17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
+
+  react-tiny-mask@0.0.3:
+    resolution: {integrity: sha512-yuru1EWf7omCvvVE8dumc9MU91eJgS0nWhMV7lYH8UdX9j+PZPbS7/I9leSEIfy8XAm0yQ4CuHHI1Q0wTLOw6Q==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
 
   react-transition-group@4.4.5:
     resolution: {integrity: sha512-pZcd1MCJoiKiBR2NRxeCRg13uCXbydPnmB4EOeRrY7480qNWO8IIgQG6zlDkm6uRMsURXPuKq0GWtiM59a5Q6g==}
@@ -3352,6 +3361,11 @@ snapshots:
   react-is@16.13.1: {}
 
   react-is@17.0.2: {}
+
+  react-tiny-mask@0.0.3(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
+    dependencies:
+      react: 19.1.1
+      react-dom: 19.1.1(react@19.1.1)
 
   react-transition-group@4.4.5(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
     dependencies:
