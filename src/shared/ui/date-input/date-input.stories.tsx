@@ -19,4 +19,20 @@ type Story = StoryObj<typeof DateInput>;
 
 export const WithCustomIcon: Story = {
 	name: 'date-input',
+	args: {
+		className: 'desctop',
+	},
+	render: args => (
+		<div
+			style={{
+				display: 'grid',
+				gap: 16,
+				// width: 320,
+				backgroundColor: 'lightgrey',
+				padding: 20,
+			}}
+		>
+			<DateInput {...args} />
+		</div>
+	),
 };

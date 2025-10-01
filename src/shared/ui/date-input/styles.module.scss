@@ -1,0 +1,47 @@
+@use '/src/shared/styles/variables' as *;
+.dateInputWrapper {
+	display: flex;
+	flex-direction: column;
+
+	// &.desctop {
+	// 	width: 304px;
+	// 	height: 53px;
+	// }
+
+	// &.mobile {
+	// 	width: 320px;
+	// }
+}
+
+.input {
+	// display: flex;
+	box-sizing: border-box;
+	border-radius: 10px;
+	padding: 16px 24px;
+	padding-left: 60px;
+	border: none;
+	width: 304px;
+	height: 53px;
+	gap: 12px;
+	font-family: var(--font-sans);
+	font-size: 14px;
+	font-weight: 500;
+	background: no-repeat 24px 50% / 24px 24px url('/images/calendar.svg');
+	background-color: var(--white);
+	margin-top: 16px;
+	box-shadow: 0 6px 18px rgba(59, 58, 61, 0.06);
+	color: var(--primary-black);
+	&.mobile {
+		width: 320px;
+	}
+}
+
+.input:focus {
+	border: 1px solid var(--primary-blue);
+}
+
+.label {
+	font-family: var(--font-sans);
+	font-size: 16px;
+	font-weight: 600;
+}

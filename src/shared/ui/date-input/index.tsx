@@ -1,32 +1,31 @@
-// src/shared/ui/DateInput/DateInput.tsx
-import { useState } from 'react';
-import { IconField } from 'primereact/iconfield';
-import { InputIcon } from 'primereact/inputicon';
-import { InputMask, type InputMaskChangeEvent } from 'primereact/inputmask';
+import { useId, useState } from 'react';
+import styles from './styles.module.scss';
+import clsx from 'clsx';
 
 type DateInputProps = {
 	placeholder?: string;
+	className?: string;
+	label?: string;
+	inputClassName?: 'mobile' | 'desktop';
 };
 
 export const DateInput = ({
-	placeholder = 'dd/mm/yyyy',
+	placeholder,
+	className,
+	inputClassName,
+	label,
 	...props
 }: DateInputProps) => {
-	const [value, setValue] = useState<string | null>(null);
+	const uniqueId = useId();
 
 	return (
-		<IconField iconPosition='left'>
-			<InputIcon>
-				<img src='/images/calendar.svg' alt='' aria-hidden />
-			</InputIcon>
-
-			<InputMask
-				value={value}
-				onChange={(e: InputMaskChangeEvent) => setValue(e.value ?? null)} // e.value: string | null
-				mask='99/99/9999'
+		<article className={clsx(styles.dateInputWrapper, className)}>
+			{label && <label className={styles.label}>{label}</label>}
+			<input
 				placeholder={placeholder}
-				// slotChar={placeholder}
+				className={clsx(styles.input, inputClassName && styles[inputClassName])}
+				id={uniqueId}
 			/>
-		</IconField>
+		</article>
 	);
 };
