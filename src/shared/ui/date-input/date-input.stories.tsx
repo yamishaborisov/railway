@@ -5,7 +5,7 @@ const meta: Meta<typeof DateInput> = {
 	title: 'shared/DateInput',
 	component: DateInput,
 	args: {
-		placeholder: 'ДД/ММ/ГГГГ',
+		placeholder: 'Depart',
 	},
 	argTypes: {
 		placeholder: { control: 'text' },
@@ -30,6 +30,8 @@ export const WithCustomIcon: Story = {
 				// width: 320,
 				backgroundColor: 'lightgrey',
 				padding: 20,
+				overflow: 'visible', // 👈 вот это добавь
+				position: 'relative', // 👈 для контекста позиционирования
 			}}
 		>
 			<DateInput {...args} />

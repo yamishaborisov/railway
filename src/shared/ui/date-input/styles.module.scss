@@ -2,19 +2,9 @@
 .dateInputWrapper {
 	display: flex;
 	flex-direction: column;
-
-	// &.desctop {
-	// 	width: 304px;
-	// 	height: 53px;
-	// }
-
-	// &.mobile {
-	// 	width: 320px;
-	// }
 }
 
 .input {
-	// display: flex;
 	box-sizing: border-box;
 	border-radius: 10px;
 	padding: 16px 24px;
@@ -34,14 +24,71 @@
 	&.mobile {
 		width: 320px;
 	}
+	&:focus {
+		border: 1px solid var(--primary-blue);
+	}
 }
 
-.input:focus {
-	border: 1px solid var(--primary-blue);
+.inputsRow {
+	display: flex;
+	gap: 32px;
 }
 
 .label {
 	font-family: var(--font-sans);
 	font-size: 16px;
 	font-weight: 600;
+}
+
+:global(.p-overlaypanel) {
+	width: 640px;
+	left: 20px !important;
+	padding: 24px 32px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&::before {
+		content: none;
+	}
+	&::after {
+		content: none;
+	}
+}
+
+:global(.p-datepicker) {
+	border: none;
+}
+
+:global(.p-datepicker table) {
+	padding: 8px;
+	font-size: 12px;
+}
+
+:global(.p-datepicker table td > span) {
+	width: 16px !important;
+	height: 16px !important;
+	border-radius: 50%;
+	transition: box-shadow 0.2s;
+	border: 1px solid transparent;
+}
+:global(.p-datepicker.p-datepicker-multiple-month .p-datepicker-group) {
+	border-left: none;
+}
+:global(.p-datepicker .p-datepicker-header) {
+	border-bottom: none;
+}
+
+:global(.p-datepicker table td > span.p-highlight) {
+	color: white;
+	background: var(--primary-blue);
+	box-shadow: 0 0 0 0.35rem var(--primary-blue);
+}
+
+:global(.p-datepicker-footer div) {
+	display: flex;
+	gap: 48px;
+	justify-content: flex-end;
+}
+:global(.p-datepicker-multiple-month .p-datepicker-group-container) {
+	gap: 32px;
 }
