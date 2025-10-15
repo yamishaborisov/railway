@@ -1,0 +1,30 @@
+.article {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 640px;
+	height: 34px;
+	gap: 147.5px;
+	border-radius: 10px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	padding: 3px 24px 5px 24px;
+}
+.inputCont {
+	display: flex;
+	width: 96px;
+}
+.inputLabel {
+	color: var(--primary-black);
+	font-size: 14px;
+	// font-style: normal;
+	font-weight: 400;
+	// line-height: normal;
+}
+
+:global(.p-inputnumber-buttons-horizontal .p-inputnumber-input) {
+	width: 31px;
+	border: none;
+}
+:global(.p-inputnumber-buttons-horizontal .p-button.p-inputnumber-button-up) {
+	border: none;
+}

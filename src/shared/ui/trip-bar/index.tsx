@@ -1,0 +1,59 @@
+import { RadioButton } from 'primereact/radiobutton';
+import { InputNumber } from 'primereact/inputnumber';
+import { useId, useState } from 'react';
+import styles from './styles.module.scss';
+
+type TripBarProps = {
+	variant: 'desktop' | 'mobile';
+};
+type TripVariant = 'round' | 'one-way';
+
+export const TripBar = ({ variant, ...props }: TripBarProps) => {
+	const roundTripId = useId();
+	const owTripId = useId();
+	const [tripVariant, setTripVariant] = useState<TripVariant>('round');
+	const [value, setValue] = useState<number>(1);
+	return (
+		<article className={styles.article}>
+			<div className={styles.inputCont}>
+				<RadioButton
+					inputId={roundTripId}
+					name='trip-variant'
+					value='round'
+					onChange={e => setTripVariant(e.value)}
+					checked={tripVariant === 'round'}
+				/>
+				<label className={styles.inputLabel} htmlFor={roundTripId}>
+					Round trip
+				</label>
+			</div>
+			<div className={styles.inputCont}>
+				<RadioButton
+					inputId={owTripId}
+					name='trip-variant'
+					value='one-way'
+					onChange={e => setTripVariant(e.value)}
+					checked={tripVariant === 'one-way'}
+				/>
+				<label className={styles.inputLabel} htmlFor={owTripId}>
+					One way
+				</label>
+			</div>
+			<div>
+				<InputNumber
+					value={value}
+					onValueChange={e => setValue(e.value ?? 0)}
+					showButtons
+					buttonLayout='horizontal'
+					incrementButtonIcon='pi pi-plus'
+					decrementButtonIcon='pi pi-minus'
+					step={1}
+					min={0}
+					// косметика, чтобы было похоже на скрин
+					decrementButtonClassName='p-button-text p-button-plain'
+					incrementButtonClassName='p-button-text'
+				/>
+			</div>
+		</article>
+	);
+};
