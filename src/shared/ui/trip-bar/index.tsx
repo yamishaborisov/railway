@@ -45,10 +45,12 @@ export const TripBar = ({ variant, ...props }: TripBarProps) => {
 					onValueChange={e => setValue(e.value ?? 0)}
 					showButtons
 					buttonLayout='horizontal'
-					incrementButtonIcon='pi pi-plus'
-					decrementButtonIcon='pi pi-minus'
+					incrementButtonIcon='myicon myicon-plus'
+					decrementButtonIcon='myicon myicon-minus'
 					step={1}
 					min={0}
+					max={9}
+					// className={styles.pasInput}
 					// косметика, чтобы было похоже на скрин
 					decrementButtonClassName='p-button-text p-button-plain'
 					incrementButtonClassName='p-button-text'

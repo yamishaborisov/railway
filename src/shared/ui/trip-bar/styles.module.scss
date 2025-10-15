@@ -16,15 +16,44 @@
 .inputLabel {
 	color: var(--primary-black);
 	font-size: 14px;
-	// font-style: normal;
+	font-family: var(--font-sans);
 	font-weight: 400;
-	// line-height: normal;
+}
+
+.pasInput {
+	text-align: center;
 }
 
 :global(.p-inputnumber-buttons-horizontal .p-inputnumber-input) {
 	width: 31px;
 	border: none;
+	text-align: center;
+	&:focus-visible {
+		outline: none;
+	}
 }
-:global(.p-inputnumber-buttons-horizontal .p-button.p-inputnumber-button-up) {
+:global(.p-inputnumber-buttons-horizontal .p-button.p-inputnumber-button-up),
+:global(.p-inputnumber-buttons-horizontal .p-button.p-inputnumber-button-down) {
 	border: none;
+	padding: 0;
+	background: transparent;
+}
+
+:global(.myicon) {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background: var(--primary-blue);
+}
+
+:global(.myicon-plus) {
+	-webkit-mask: url('/images/plus.svg') no-repeat center / contain;
+	mask: url('/images/plus.svg') no-repeat center / contain;
+}
+:global(.myicon-minus) {
+	-webkit-mask: url('/images/minus.svg') no-repeat center / contain;
+	mask: url('/images/minus.svg') no-repeat center / contain;
+}
+:global(.p-inputnumber .p-button .p-button-icon) {
+	margin: 0;
 }
