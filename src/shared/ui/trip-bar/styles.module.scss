@@ -11,7 +11,13 @@
 }
 .inputCont {
 	display: flex;
-	width: 96px;
+	align-items: center;
+	gap: 6px;
+}
+.inputCounterGroup {
+	display: flex;
+	align-items: center;
+	gap: 6px;
 }
 .inputLabel {
 	color: var(--primary-black);
@@ -23,20 +29,30 @@
 .pasInput {
 	text-align: center;
 }
+.personImg {
+	height: 32px;
+}
 
 :global(.p-inputnumber-buttons-horizontal .p-inputnumber-input) {
 	width: 31px;
+	height: 22px;
 	border: none;
+	padding: 0;
 	text-align: center;
 	&:focus-visible {
 		outline: none;
 	}
+}
+:global(.p-input-wrapper-focus) {
+	outline: none;
 }
 :global(.p-inputnumber-buttons-horizontal .p-button.p-inputnumber-button-up),
 :global(.p-inputnumber-buttons-horizontal .p-button.p-inputnumber-button-down) {
 	border: none;
 	padding: 0;
 	background: transparent;
+	width: 20px;
+	height: 20px;
 }
 
 :global(.myicon) {
@@ -56,4 +72,63 @@
 }
 :global(.p-inputnumber .p-button .p-button-icon) {
 	margin: 0;
+}
+:global(.p-radiobutton:has(.p-radiobutton-input) .p-radiobutton-box) {
+	border-color: #c7d0de;
+	background-color: #c7d0de;
+}
+
+:global(.p-radiobutton:has(.p-radiobutton-input:checked) .p-radiobutton-box) {
+	border-color: var(--primary-blue);
+	background-color: var(--primary-blue);
+}
+
+:global(.p-radiobutton .p-radiobutton-box .p-radiobutton-icon) {
+	width: 6px;
+	height: 6px;
+}
+
+:global(
+		.p-inputnumber
+			.p-component
+			.p-inputwrapper
+			.p-inputwrapper-filled
+			.p-inputnumber-buttons-horizontal
+	) {
+	display: flex;
+	align-items: center;
+}
+
+:global(
+		.p-inputnumber
+			.p-component
+			.p-inputwrapper
+			.p-inputwrapper-filled
+			.p-inputnumber-buttons-horizontal
+	) {
+	display: flex;
+	align-items: center;
+}
+
+:global(.p-inputnumber .p-inputnumber-input:focus-visible) {
+	box-shadow: none !important;
+}
+
+@media (max-width: 900px) {
+	.article {
+		width: 320px;
+		padding: 0 8px;
+		gap: 25.5px;
+	}
+	.inputLabel {
+		font-size: 12px;
+	}
+	// .inputCounterGroup {
+	// 	gap: 6px;
+
+	// }
+	:global(.p-inputnumber-buttons-horizontal .p-inputnumber-input) {
+		width: 24px;
+		font-size: 12px;
+	}
 }

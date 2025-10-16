@@ -4,11 +4,11 @@ import { useId, useState } from 'react';
 import styles from './styles.module.scss';
 
 type TripBarProps = {
-	variant: 'desktop' | 'mobile';
+	variantD: 'desktop' | 'mobile';
 };
 type TripVariant = 'round' | 'one-way';
 
-export const TripBar = ({ variant, ...props }: TripBarProps) => {
+export const TripBar = ({ variantD, ...props }: TripBarProps) => {
 	const roundTripId = useId();
 	const owTripId = useId();
 	const [tripVariant, setTripVariant] = useState<TripVariant>('round');
@@ -20,6 +20,7 @@ export const TripBar = ({ variant, ...props }: TripBarProps) => {
 					inputId={roundTripId}
 					name='trip-variant'
 					value='round'
+					variant='filled'
 					onChange={e => setTripVariant(e.value)}
 					checked={tripVariant === 'round'}
 				/>
@@ -32,6 +33,7 @@ export const TripBar = ({ variant, ...props }: TripBarProps) => {
 					inputId={owTripId}
 					name='trip-variant'
 					value='one-way'
+					variant='filled'
 					onChange={e => setTripVariant(e.value)}
 					checked={tripVariant === 'one-way'}
 				/>
@@ -39,7 +41,10 @@ export const TripBar = ({ variant, ...props }: TripBarProps) => {
 					One way
 				</label>
 			</div>
-			<div>
+			<div className={styles.inputCounterGroup}>
+				<span>
+					<img className={styles.personImg} src='/public/images/person.svg' />
+				</span>
 				<InputNumber
 					value={value}
 					onValueChange={e => setValue(e.value ?? 0)}
@@ -51,7 +56,6 @@ export const TripBar = ({ variant, ...props }: TripBarProps) => {
 					min={0}
 					max={9}
 					// className={styles.pasInput}
-					// косметика, чтобы было похоже на скрин
 					decrementButtonClassName='p-button-text p-button-plain'
 					incrementButtonClassName='p-button-text'
 				/>
