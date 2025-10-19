@@ -4,6 +4,9 @@ import { Button } from './index';
 const meta: Meta<typeof Button> = {
 	title: 'Shared/Button',
 	component: Button,
+
+	args: { children: 'Button' },
+
 	parameters: { layout: 'centered' },
 };
 export default meta;
