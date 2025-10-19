@@ -10,7 +10,7 @@ const meta: Meta<typeof Input> = {
 		label: { control: 'text' },
 		placeholder: { control: 'text' },
 		required: { control: 'boolean' },
-		variant: { control: 'radio', options: ['primary', 'code', 'visa', 'date'] },
+		variant: { control: 'radio', options: ['primary', 'code', 'visa'] },
 	},
 };
 export default meta;
