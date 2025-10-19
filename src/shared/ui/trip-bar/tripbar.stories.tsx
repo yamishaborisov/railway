@@ -6,7 +6,7 @@ const meta = {
 	component: TripBar,
 	tags: ['autodocs'],
 	argTypes: {
-		variant: {
+		variantD: {
 			control: { type: 'inline-radio' },
 			options: ['desktop', 'mobile'],
 			// description: 'Вёрстка/поведение под разные брейкпоинты',
@@ -22,7 +22,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Desktop: Story = {
-	args: { variant: 'desktop' },
+	args: { variantD: 'desktop' },
 };
 
 // export const Mobile: Story = {
