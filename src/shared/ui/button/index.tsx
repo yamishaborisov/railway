@@ -14,6 +14,7 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 	density?: Density;
 	weight?: Weight;
 	children: ReactNode;
+	label?: string;
 };
 
 export const Button = ({
