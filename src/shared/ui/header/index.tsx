@@ -2,7 +2,7 @@ import styles from './styles.module.scss';
 import clsx from 'clsx';
 
 type HeaderProps = {
-	bg: 'light' | 'dark';
+	bg?: 'light' | 'dark';
 };
 
 export const Header = ({ bg = 'light', ...props }: HeaderProps) => {
