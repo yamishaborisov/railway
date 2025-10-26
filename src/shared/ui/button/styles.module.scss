@@ -6,6 +6,7 @@
 	border-radius: 10px;
 	font-family: var(--font-sans);
 	font-weight: 500;
+	cursor: pointer;
 }
 
 .size {
@@ -59,7 +60,7 @@
 
 .outline {
 	background: transparent;
-	font-size: 14px;
+	font-size: 16px;
 
 	&.brand {
 		color: var(--primary-black);
@@ -82,6 +83,10 @@
 	}
 	&.neutral {
 		color: var(--primary-black-50);
+	}
+	&.danger {
+		color: var(--red);
+		font-size: 16px;
 	}
 }
 
