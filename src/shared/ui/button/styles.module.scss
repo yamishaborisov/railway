@@ -74,8 +74,9 @@
 }
 
 .ghost {
-	background: transparent;
+	background: none;
 	border-color: transparent;
+	padding: 0;
 
 	&.brand {
 		color: var(--primary-blue);
