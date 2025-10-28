@@ -1,15 +1,9 @@
-import clsx from 'clsx';
+// import clsx from 'clsx';
 import s from './styles.module.scss';
 import { Button } from '../button';
+import { type Offer } from './types';
 
-export type Offer = {
-	id: string;
-	description: string;
-	code: string;
-	applied?: boolean;
-};
-
-export type OffersProps = {
+type OffersProps = {
 	title?: string;
 	offers: Offer[];
 	onApply?: (offer: Offer) => void;
@@ -66,7 +60,7 @@ export function Offers({
 	);
 }
 
-export const demoOffers: Offer[] = [
+const demoOffers: Offer[] = [
 	{
 		id: 'o1',
 		description: '50% off up to ₹100',

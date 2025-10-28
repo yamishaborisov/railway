@@ -1,5 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Offers, demoOffers } from './index';
+import { Offers } from './index';
+import { type Offer } from './types';
+
+const demoOffers: Offer[] = [
+	{
+		id: 'o1',
+		description: '50% off up to ₹100',
+		code: 'BOOKNOW',
+		applied: true,
+	},
+	{ id: 'o2', description: '20% off', code: 'FIRSTTIME' },
+];
 
 const meta: Meta<typeof Offers> = {
 	title: 'Components/Offers',
@@ -14,9 +25,9 @@ const meta: Meta<typeof Offers> = {
 	},
 	decorators: [
 		S => (
-			// <div style={{ width: 560 }}>
-			<S />
-			// </div>
+			<div style={{ width: 320 }}>
+				<S />
+			</div>
 		),
 	],
 };
