@@ -3,42 +3,47 @@ import styles from './styles.module.scss';
 import clsx from 'clsx';
 import { Button } from '../button';
 import { OverlayPanel } from 'primereact/overlaypanel';
+import type { OverlayPanel as OverlayPanelRef } from 'primereact/overlaypanel';
 import { Calendar } from 'primereact/calendar';
 import { addLocale } from 'primereact/api';
+import { dateFmt, startOfMonth } from '../..//lib/constants/date';
+import { type Range } from './types';
+
 type DateRangeInputProps = {
-	// placeholder?: string;
+	placeholder?: string;
 	className?: string;
-	// label?: string;
+	label?: string;
 	inputClassName?: 'mobile' | 'desktop';
 };
+
 addLocale('one-letter-monday', {
 	firstDayOfWeek: 1,
 	dayNamesShort: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
 	dayNamesMin: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
 });
 
-const dateFmt = new Intl.DateTimeFormat('en-GB', {
-	day: 'numeric',
-	month: 'long',
-	year: 'numeric',
-});
-const startOfMonth = (d: Date) => new Date(d.getFullYear(), d.getMonth(), 1);
-type Range = { from: Date | null; to: Date | null };
 export const DateInput = ({
-	// placeholder,
+	placeholder,
 	className,
 	inputClassName,
-}: // label,
-DateRangeInputProps) => {
-	// const departId = useId();
-	// const returnId = useId();
+	label,
+}: DateRangeInputProps) => {
 	const wrapperRef = useRef<HTMLDivElement>(null);
-	const op = useRef<any>(null);
+
+	const op = useRef<OverlayPanelRef>(null);
+
 	const [value, setValue] = useState<Range>({ from: null, to: null });
+
 	const [draft, setDraft] = useState<Date[] | null>(null);
-	const [viewDate, setViewDate] = useState<Date>(startOfMonth(new Date()));
+
+	const [viewDate, setViewDate] = useState<Date>(() =>
+		startOfMonth(new Date())
+	);
+
 	const [isOpen, setIsOpen] = useState(false);
+
 	const selectingRef = useRef(false);
+
 	useEffect(() => {
 		const onDocPointerDown = (ev: PointerEvent) => {
 			const wrap = wrapperRef.current;
@@ -52,8 +57,8 @@ DateRangeInputProps) => {
 		return () => document.removeEventListener('pointerdown', onDocPointerDown);
 	}, []);
 
-	const openPanel = (e: any) => {
-		op.current?.show(e);
+	const openPanel = (e: React.PointerEvent<HTMLInputElement>) => {
+		op.current?.show(e, e.currentTarget);
 		const base = value.from ?? new Date();
 		setViewDate(startOfMonth(base));
 		const arr: Date[] = [];
@@ -115,7 +120,7 @@ DateRangeInputProps) => {
 			ref={wrapperRef}
 			className={clsx(styles.dateInputWrapper, className)}
 		>
-			<div className='label'>Pick your lucky day</div>
+			<div className='label'>{label}</div>
 			<div className={styles.inputsRow}>
 				<div className={styles.inputCol}>
 					<input
@@ -159,7 +164,7 @@ DateRangeInputProps) => {
 					numberOfMonths={2}
 					showOtherMonths={false}
 					selectionMode='range'
-					value={draft as any}
+					value={draft}
 					onChange={onCalendarChange}
 					footerTemplate={calendarFooter}
 					viewDate={viewDate}

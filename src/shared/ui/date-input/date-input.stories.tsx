@@ -20,7 +20,7 @@ type Story = StoryObj<typeof DateInput>;
 export const WithCustomIcon: Story = {
 	name: 'date-input',
 	args: {
-		className: 'desctop',
+		className: 'desktop',
 	},
 	render: args => (
 		<div
