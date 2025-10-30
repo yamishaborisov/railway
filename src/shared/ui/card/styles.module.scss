@@ -1,0 +1,47 @@
+.normal {
+	padding: 32px 24px;
+	&.credit {
+		padding: 32px 16px;
+	}
+}
+
+.mobile {
+	padding: 32px 16px;
+	&.credit {
+		padding: 32px 8px;
+	}
+}
+
+.mini {
+	padding: 24px 16px;
+}
+
+.bg-white {
+	background-color: var(--white);
+}
+.bg-grey {
+	background-color: var(--card-grey);
+}
+.bg-red {
+	background-color: var(--card-red);
+}
+.bg-green {
+	background-color: var(--card-green);
+}
+.bg-yellow {
+	background-color: var(--card-amber);
+}
+
+/* Бордеры */
+.bd-none {
+	border: none;
+	border-radius: 10px;
+}
+.bd-solid {
+	border: 1px solid var(--primary-black-50);
+	border-radius: 10px;
+}
+.bd-dashed {
+	border: 2px dashed var(--primary-blue);
+	border-radius: 20px;
+}
