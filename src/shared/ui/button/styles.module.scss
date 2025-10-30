@@ -60,7 +60,7 @@
 
 .outline {
 	background: transparent;
-	font-size: 14px;
+	font-size: 16px;
 
 	&.brand {
 		color: var(--primary-black);
@@ -74,8 +74,9 @@
 }
 
 .ghost {
-	background: transparent;
+	background: none;
 	border-color: transparent;
+	padding: 0;
 
 	&.brand {
 		color: var(--primary-blue);
@@ -83,6 +84,10 @@
 	}
 	&.neutral {
 		color: var(--primary-black-50);
+	}
+	&.danger {
+		color: var(--red);
+		font-size: 16px;
 	}
 }
 
