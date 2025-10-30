@@ -1,0 +1,50 @@
+:global(.p-autocomplete .p-autocomplete-input.p-inputtext.p-component) {
+	padding: 16px 24px;
+	font-family: var(--font-sans);
+	font-size: 14px;
+	font-weight: 500;
+	border-radius: 10px;
+	color: var(--primary-black);
+	outline: none;
+	box-shadow: none;
+	width: 100%;
+	height: 100%;
+
+	&:focus {
+		border: none;
+	}
+
+	&::placeholder {
+		color: #90a3bf;
+	}
+}
+
+:global(.p-autocomplete-items-wrapper) {
+	max-height: 280px !important;
+}
+
+:global(.p-autocomplete-panel) {
+	border-radius: 12px !important;
+}
+
+:global(.p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item) {
+	padding: 0.75rem 1.5rem;
+	margin-bottom: 10px;
+}
+
+:global(.p-autocomplete-items) {
+	font-weight: 400;
+}
+
+.label {
+	color: var(--primary-black);
+	font-family: var(--font-sans);
+	font-size: 16px;
+	font-weight: 600;
+	margin-bottom: 16px;
+}
+
+.article {
+	display: flex;
+	flex-direction: column;
+}
