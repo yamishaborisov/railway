@@ -1,9 +1,6 @@
-// src/components/InputList/InputList.stories.tsx
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { InputList } from './index';
 
-// Если стили PrimeReact уже импортированы в .storybook/preview.ts,
-// эти импорты можно удалить из файла историй:
 import 'primereact/resources/themes/lara-light-blue/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
@@ -22,12 +19,12 @@ const meta: Meta<typeof InputList> = {
 	},
 	decorators: [
 		Story => (
-			<div style={{ width: 360, background: 'grey', padding: 16 }}>
+			<div style={{ width: 400, background: 'grey', padding: 16 }}>
 				<Story />
 			</div>
 		),
 	],
-	// 👇 control для placeholder
+
 	argTypes: {
 		placeholder: {
 			control: { type: 'select' },
@@ -41,8 +38,6 @@ const meta: Meta<typeof InputList> = {
 
 export default meta;
 type Story = StoryObj<typeof InputList>;
-
-// export const Default: Story = {};
 
 export const TwoFields: Story = {
 	name: 'Два поля: Откуда / Куда',
