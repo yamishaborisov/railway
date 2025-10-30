@@ -1,0 +1,103 @@
+@use '/src/shared/styles/variables' as *;
+
+.dateInputWrapper {
+	display: flex;
+	flex-direction: column;
+}
+
+.input {
+	box-sizing: border-box;
+	border-radius: 10px;
+	padding: 16px 24px 16px 60px;
+	border: none;
+	width: auto;
+	height: 53px;
+	gap: 12px;
+	font-family: var(--font-sans);
+	font-size: 14px;
+	font-weight: 500;
+	background: no-repeat 24px 50% / 24px 24px url('/images/calendar.svg');
+	background-color: var(--white);
+	margin-top: 16px;
+	box-shadow: 0 6px 18px rgba(59, 58, 61, 0.06);
+	color: var(--primary-black);
+
+	&.mobile {
+		// width: 320px;
+	}
+
+	&:focus {
+		border: 1px solid var(--primary-blue);
+	}
+}
+
+.inputsRow {
+	display: flex;
+	gap: 32px;
+}
+
+.label {
+	font-family: var(--font-sans);
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.dateInputWrapper :global(.p-overlaypanel) {
+	// width: 640px;
+	left: 20px !important;
+	padding: 24px 32px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&::before {
+		content: none;
+	}
+
+	&::after {
+		content: none;
+	}
+}
+
+.dateInputWrapper :global(.p-datepicker) {
+	border: none;
+}
+
+.dateInputWrapper :global(.p-datepicker table) {
+	padding: 8px;
+	font-size: 12px;
+}
+
+.dateInputWrapper :global(.p-datepicker table td > span) {
+	width: 16px !important;
+	height: 16px !important;
+	border-radius: 50%;
+	transition: box-shadow 0.2s;
+	border: 1px solid transparent;
+}
+
+.dateInputWrapper
+	:global(.p-datepicker.p-datepicker-multiple-month .p-datepicker-group) {
+	border-left: none;
+}
+
+.dateInputWrapper :global(.p-datepicker .p-datepicker-header) {
+	border-bottom: none;
+}
+
+.dateInputWrapper :global(.p-datepicker table td > span.p-highlight) {
+	color: white;
+	background: var(--primary-blue);
+	box-shadow: 0 0 0 0.35rem var(--primary-blue);
+}
+
+.dateInputWrapper :global(.p-datepicker-footer div) {
+	display: flex;
+	gap: 48px;
+	justify-content: flex-end;
+}
+
+.dateInputWrapper
+	:global(.p-datepicker-multiple-month .p-datepicker-group-container) {
+	gap: 32px;
+}
