@@ -1,9 +1,4 @@
 .card {
-	padding: 24px 16px;
-	width: 160px;
-	height: 92px;
-	border: transparent;
-	border-radius: 10px;
 	display: flex;
 	flex-direction: column;
 	gap: 8px;
@@ -11,16 +6,7 @@
 	font-weight: 500;
 	font-size: 12px;
 	color: var(--primary-black);
-	cursor: pointer;
-	&.cardGreen {
-		background: #7dcfb6;
-	}
-	&.cardAmber {
-		background: #fbd1a2;
-	}
-	&.cardRed {
-		background: #f79256;
-	}
+	// cursor: pointer;
 }
 
 .rowTop,

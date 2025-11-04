@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { FareOptionCard, type FareOption } from './index';
+import { FareOptionCard } from './index';
+import { type FareOption } from '../model';
 
 const meta: Meta<typeof FareOptionCard> = {
 	title: 'Components/FareOptionCard',
@@ -7,14 +8,13 @@ const meta: Meta<typeof FareOptionCard> = {
 	parameters: { layout: 'centered' },
 	decorators: [
 		S => (
-			<div style={{ width: 320 }}>
+			<div style={{ width: 160 }}>
 				<S />
 			</div>
 		),
 	],
 	argTypes: {
 		option: { control: 'object' },
-		onSelect: { action: 'select' },
 	},
 	args: {
 		option: {
@@ -23,10 +23,8 @@ const meta: Meta<typeof FareOptionCard> = {
 			quota: 'TQ',
 			count: 46,
 			price: 800,
-			// currency: 'INR',
-			// selected: false,
-			// disabled: false,
 		} satisfies FareOption,
+		bg: 'red',
 	},
 };
 
