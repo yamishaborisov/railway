@@ -7,9 +7,6 @@
 	justify-content: center;
 	align-items: flex-start;
 	gap: 24px;
-	border-radius: 20px;
-	border: 2px dashed var(--primary-blue);
-	background: var(--white);
 	font-family: var(--font-sans);
 	font-weight: 500;
 	font-size: 16px;
@@ -30,11 +27,19 @@
 	flex-direction: column;
 	gap: 24px;
 }
+
 .item {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	gap: 125px;
 }
+
+.icon {
+	display: flex;
+	align-items: center;
+}
+
 .textWrapper {
 	display: flex;
 	align-items: center;
@@ -44,6 +49,5 @@
 @media (max-width: 768px) {
 	.box {
 		padding: 32px 16px;
-		// width: 296px;
 	}
 }

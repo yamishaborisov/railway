@@ -25,7 +25,7 @@ const meta: Meta<typeof Offers> = {
 	},
 	decorators: [
 		S => (
-			<div style={{ width: 320 }}>
+			<div style={{ width: 640 }}>
 				<S />
 			</div>
 		),
