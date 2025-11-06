@@ -1,0 +1,39 @@
+.root {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.item {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.label {
+	color: var(--primary-black);
+	font-size: 14px;
+	font-family: var(--font-sans);
+	font-weight: 400;
+}
+
+.root :global(.p-radiobutton .p-radiobutton-box) {
+	border-color: #c7d0de;
+	background-color: #c7d0de;
+}
+
+.root :global(.p-radiobutton.p-highlight .p-radiobutton-box) {
+	border-color: var(--primary-blue);
+	background-color: var(--primary-blue);
+}
+
+.root :global(.p-radiobutton .p-radiobutton-box .p-radiobutton-icon) {
+	width: 6px;
+	height: 6px;
+}
+
+@media (max-width: 900px) {
+	.label {
+		font-size: 12px;
+	}
+}

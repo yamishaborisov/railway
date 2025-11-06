@@ -1,0 +1,38 @@
+.input :global(.p-inputnumber-input) {
+	border: none;
+	padding: 0;
+	text-align: center;
+
+	&:focus-visible {
+		outline: none;
+	}
+}
+
+.input :global(.p-inputnumber .p-inputnumber-input:focus-visible) {
+	box-shadow: none !important;
+}
+
+.input :global(.p-inputnumber-button-up),
+.input :global(.p-inputnumber-button-down) {
+	border: none;
+	padding: 0;
+	background: transparent;
+}
+
+/* иконки */
+.input :global(.myicon) {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background: var(--primary-blue);
+}
+
+.input :global(.myicon-plus) {
+	-webkit-mask: url('/images/plus.svg') no-repeat center / contain;
+	mask: url('/images/plus.svg') no-repeat center / contain;
+}
+
+.input :global(.myicon-minus) {
+	-webkit-mask: url('/images/minus.svg') no-repeat center / contain;
+	mask: url('/images/minus.svg') no-repeat center / contain;
+}

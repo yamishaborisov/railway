@@ -21,4 +21,9 @@ type Story = StoryObj<typeof meta>;
 
 export const Desktop: Story = {
 	args: { variantD: 'desktop' },
+	render: args => (
+		<div style={{ width: '640px' }}>
+			<TripBar {...args} />
+		</div>
+	),
 };

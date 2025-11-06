@@ -1,0 +1,47 @@
+.article {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 10px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	padding: 3px 24px 5px 24px;
+}
+
+.inputCounterGroup {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.pasInput {
+	text-align: center;
+}
+
+.personImg {
+	height: 32px;
+	display: flex;
+}
+
+.counterSmall :global(.p-inputnumber-input) {
+	width: 31px;
+	height: 22px;
+}
+
+.counterSmall :global(.p-inputnumber-button-up),
+.counterSmall :global(.p-inputnumber-button-down) {
+	width: 20px;
+	height: 20px;
+}
+
+@media (max-width: 900px) {
+	.counterSmall :global(.p-inputnumber-input) {
+		width: 24px;
+		font-size: 12px;
+	}
+
+	.article {
+		// width: 320px;
+		padding: 0 8px;
+		gap: 25.5px;
+	}
+}
