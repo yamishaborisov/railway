@@ -3,6 +3,12 @@
 .dateInputWrapper {
 	display: flex;
 	flex-direction: column;
+	position: relative;
+}
+
+.inputCol {
+	flex: 1;
+	min-width: 0;
 }
 
 .input {
@@ -10,7 +16,7 @@
 	border-radius: 10px;
 	padding: 16px 24px 16px 60px;
 	border: none;
-	width: auto;
+	width: 100%;
 	height: 53px;
 	gap: 12px;
 	font-family: var(--font-sans);
@@ -19,12 +25,7 @@
 	background: no-repeat 24px 50% / 24px 24px url('/images/calendar.svg');
 	background-color: var(--white);
 	margin-top: 16px;
-	box-shadow: 0 6px 18px rgba(59, 58, 61, 0.06);
 	color: var(--primary-black);
-
-	&.mobile {
-		// width: 320px;
-	}
 
 	&:focus {
 		border: 1px solid var(--primary-blue);
@@ -43,17 +44,14 @@
 }
 
 .dateInputWrapper :global(.p-overlaypanel) {
-	// width: 640px;
-	left: 20px !important;
+	width: 640px;
+	position: absolute !important;
+	top: calc(100% + 8px) !important;
+	left: 0 !important;
+	transform: none !important;
 	padding: 24px 32px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 
-	&::before {
-		content: none;
-	}
-
+	&::before,
 	&::after {
 		content: none;
 	}

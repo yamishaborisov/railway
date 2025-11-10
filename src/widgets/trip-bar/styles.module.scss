@@ -3,8 +3,9 @@
 	justify-content: space-between;
 	align-items: center;
 	border-radius: 10px;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	background: var(--white);
 	padding: 3px 24px 5px 24px;
+	width: 100%;
 }
 
 .inputCounterGroup {
@@ -40,7 +41,6 @@
 	}
 
 	.article {
-		// width: 320px;
 		padding: 0 8px;
 		gap: 25.5px;
 	}

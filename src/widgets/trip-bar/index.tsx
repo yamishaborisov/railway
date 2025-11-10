@@ -1,5 +1,4 @@
-import { RadioBtn } from '@/shared/ui/radio-button';
-import { Counter } from '@/shared/ui/counter';
+import { RadioBtn, Counter } from '@/shared/ui';
 import { useState } from 'react';
 import styles from './styles.module.scss';
 

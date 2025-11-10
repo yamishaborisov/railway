@@ -41,17 +41,5 @@ type Story = StoryObj<typeof InputList>;
 
 export const TwoFields: Story = {
 	name: 'Два поля: Откуда / Куда',
-	render: () => (
-		// <div style={{ display: 'grid', gap: 12, width: 360 }}>
-		// 	<label style={{ display: 'grid', gap: 4 }}>
-		// 		<span style={{ fontSize: 12 }}>Откуда</span>
-		// 		<InputList />
-		// 	</label>
-		// 	<label style={{ display: 'grid', gap: 4 }}>
-		// 		<span style={{ fontSize: 12 }}>Куда</span>
-		// 		<InputList />
-		// 	</label>
-		// </div>
-		<InputList />
-	),
+	render: () => <InputList />,
 };

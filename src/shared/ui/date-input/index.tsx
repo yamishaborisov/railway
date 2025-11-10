@@ -58,7 +58,8 @@ export const DateInput = ({
 	}, []);
 
 	const openPanel = (e: React.PointerEvent<HTMLInputElement>) => {
-		op.current?.show(e, e.currentTarget);
+		const anchor = wrapperRef.current ?? e.currentTarget;
+		op.current?.show(e, anchor);
 		const base = value.from ?? new Date();
 		setViewDate(startOfMonth(base));
 		const arr: Date[] = [];
@@ -108,9 +109,9 @@ export const DateInput = ({
 				variant='ghost'
 				tone='neutral'
 				onClick={handleReset}
-				label='Reset'
+				children='Reset'
 			/>
-			<Button size='sm' onClick={handleApply} label='Apply' />
+			<Button size='sm' onClick={handleApply} children='Apply' />
 		</div>
 	);
 	const shownFrom = isOpen ? draft?.[0] ?? value.from : value.from;
@@ -120,7 +121,7 @@ export const DateInput = ({
 			ref={wrapperRef}
 			className={clsx(styles.dateInputWrapper, className)}
 		>
-			<div className='label'>{label}</div>
+			<div className={styles.label}>{label}</div>
 			<div className={styles.inputsRow}>
 				<div className={styles.inputCol}>
 					<input

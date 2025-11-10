@@ -15,8 +15,6 @@ export default meta;
 
 type Story = StoryObj<typeof DateInput>;
 
-// export const Default: Story = {};
-
 export const WithCustomIcon: Story = {
 	name: 'date-input',
 	args: {
@@ -27,11 +25,10 @@ export const WithCustomIcon: Story = {
 			style={{
 				display: 'grid',
 				gap: 16,
-				// width: 320,
 				backgroundColor: 'lightgrey',
 				padding: 20,
-				overflow: 'visible', // 👈 вот это добавь
-				position: 'relative', // 👈 для контекста позиционирования
+				overflow: 'visible',
+				position: 'relative',
 			}}
 		>
 			<DateInput {...args} />

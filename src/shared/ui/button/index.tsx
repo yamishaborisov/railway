@@ -13,7 +13,7 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 	size?: Size;
 	density?: Density;
 	weight?: Weight;
-	children: ReactNode;
+	children?: ReactNode;
 	label?: string;
 };
 

@@ -1,4 +1,4 @@
-import { Card } from '@/shared/ui/card';
+import { Card } from '@/shared/ui';
 import styles from './styles.module.scss';
 import type { FareOption } from '../model';
 

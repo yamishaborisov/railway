@@ -1,7 +1,6 @@
 import s from './styles.module.scss';
-import { Button } from '@/shared/ui/button';
+import { Button, Card } from '@/shared/ui/';
 import { type Offer } from './types';
-import { Card } from '@/shared/ui/card';
 
 type OffersProps = {
 	title?: string;

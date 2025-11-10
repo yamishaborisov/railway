@@ -1,9 +1,5 @@
 import styles from './styles.module.scss';
-import {
-	ABOUT_LINKS,
-	COMMUNITY_LINKS,
-	SOCIALS_LINKS,
-} from '@/shared/lib/config/routes';
+import { ABOUT_LINKS, COMMUNITY_LINKS, SOCIALS_LINKS } from '@/shared/lib/';
 
 export const Footer = () => {
 	return (

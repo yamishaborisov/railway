@@ -4,19 +4,22 @@ import {
 	type AutoCompleteChangeEvent,
 } from 'primereact/autocomplete';
 import { useId, useState } from 'react';
+import clsx from 'clsx';
 import { CITY_ITEMS } from './cities';
 import styles from './styles.module.scss';
 
 type City = { label: string; value: string };
+
 type InputListProps = {
 	placeholder?: 'Your City/Station' | 'Where to?';
 	label?: 'Departure' | 'Arrival';
+	className?: string;
 };
 
 export const InputList = ({
 	placeholder = 'Your City/Station',
 	label = 'Departure',
-	...props
+	className,
 }: InputListProps) => {
 	const [value, setValue] = useState<City | null>(null);
 	const [suggestions, setSuggestions] = useState<City[]>([]);
@@ -28,7 +31,7 @@ export const InputList = ({
 	};
 
 	return (
-		<article className={styles.article}>
+		<article className={clsx(styles.article, className)}>
 			<label className={styles.label} htmlFor={id}>
 				{label}
 			</label>
@@ -43,7 +46,6 @@ export const InputList = ({
 				panelStyle={{ marginTop: '12px' }}
 				onDropdownClick={() => setSuggestions(CITY_ITEMS)}
 				placeholder={placeholder}
-				// appendTo={typeof document !== 'undefined' ? document.body : undefined}
 			/>
 		</article>
 	);

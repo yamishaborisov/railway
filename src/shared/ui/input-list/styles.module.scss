@@ -9,10 +9,7 @@
 	box-shadow: none;
 	width: 100%;
 	height: 100%;
-
-	&:focus {
-		border: none;
-	}
+	border: none;
 
 	&::placeholder {
 		color: #90a3bf;

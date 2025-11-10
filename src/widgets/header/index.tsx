@@ -1,6 +1,6 @@
 import styles from './styles.module.scss';
 import clsx from 'clsx';
-import { HEADER_NAV } from '@/shared/lib/config/routes';
+import { HEADER_NAV } from '@/shared/lib/';
 
 type HeaderProps = {
 	className?: string;
