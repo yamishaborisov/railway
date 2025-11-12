@@ -1,10 +1,19 @@
-import type { InputHTMLAttributes, Ref } from 'react';
+import type { InputHTMLAttributes } from 'react';
 
-export type InputProps = {
-	variant?: 'primary' | 'code' | 'visa';
+export type BaseInputProps = Omit<
+	InputHTMLAttributes<HTMLInputElement>,
+	'value' | 'onChange'
+> & {
 	label?: string;
 	error?: string;
 	success?: string;
 	inputClassName?: string;
-	ref?: Ref<HTMLInputElement>;
-} & Omit<InputHTMLAttributes<HTMLInputElement>, 'size'>;
+	value: string;
+	onChange: (value: string) => void;
+};
+
+export type InputVariant = 'primary' | 'code' | 'visa';
+
+export type InputProps = BaseInputProps & {
+	variant?: InputVariant;
+};

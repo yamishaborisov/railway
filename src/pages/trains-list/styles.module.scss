@@ -12,6 +12,14 @@
 	gap: 40px;
 	padding: 40px 64px;
 }
+.title {
+	margin: 0 0 24px;
+	font-size: 32px;
+	font-weight: 600;
+	font-family: var(--font-sans);
+	font-weight: 400;
+	color: var(--primary-blue);
+}
 
 .sectionTop,
 .middleSection {
@@ -27,32 +35,6 @@
 	display: flex;
 	flex-direction: column;
 	gap: 32px;
-}
-
-.title {
-	margin: 0 0 24px;
-	font-size: 32px;
-	font-weight: 600;
-	font-family: var(--font-sans);
-	font-weight: 400;
-	color: var(--primary-blue);
-}
-
-.inputListWrap {
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	margin-top: 40px;
-}
-
-.inputList {
-	width: 304px;
-}
-
-.dateInput {
-	width: 100%;
-	margin-top: 24px;
-	margin-bottom: 24px;
 }
 
 .middleSection {

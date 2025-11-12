@@ -1,16 +1,28 @@
-import { useState, useRef, useEffect } from 'react';
-import styles from './styles.module.scss';
+import {
+	useState,
+	useRef,
+	useEffect,
+	type MouseEvent,
+	type PointerEvent as ReactPointerEvent,
+} from 'react';
 import clsx from 'clsx';
-import { Button } from '../button';
 import { OverlayPanel } from 'primereact/overlaypanel';
 import type { OverlayPanel as OverlayPanelRef } from 'primereact/overlaypanel';
-import { Calendar } from 'primereact/calendar';
+import { Calendar, type CalendarViewChangeEvent } from 'primereact/calendar';
 import { addLocale } from 'primereact/api';
+
+import { Button } from '../button';
 import { dateFmt, startOfMonth } from '../..//lib/constants/date';
-import { type Range } from './types';
+import type { DateRange } from './types';
+import styles from './styles.module.scss';
 
 type DateRangeInputProps = {
-	placeholder?: string;
+	value: DateRange;
+	onChange: (value: DateRange) => void;
+
+	placeholderFrom?: string;
+	placeholderTo?: string;
+
 	className?: string;
 	label?: string;
 	inputClassName?: 'mobile' | 'desktop';
@@ -23,16 +35,16 @@ addLocale('one-letter-monday', {
 });
 
 export const DateInput = ({
-	placeholder,
+	value,
+	onChange,
+	placeholderFrom = 'Depart',
+	placeholderTo = 'Return',
 	className,
 	inputClassName,
 	label,
 }: DateRangeInputProps) => {
 	const wrapperRef = useRef<HTMLDivElement>(null);
-
 	const op = useRef<OverlayPanelRef>(null);
-
-	const [value, setValue] = useState<Range>({ from: null, to: null });
 
 	const [draft, setDraft] = useState<Date[] | null>(null);
 
@@ -41,7 +53,6 @@ export const DateInput = ({
 	);
 
 	const [isOpen, setIsOpen] = useState(false);
-
 	const selectingRef = useRef(false);
 
 	useEffect(() => {
@@ -53,19 +64,23 @@ export const DateInput = ({
 				setIsOpen(false);
 			}
 		};
+
 		document.addEventListener('pointerdown', onDocPointerDown);
 		return () => document.removeEventListener('pointerdown', onDocPointerDown);
 	}, []);
 
-	const openPanel = (e: React.PointerEvent<HTMLInputElement>) => {
-		const anchor = wrapperRef.current ?? e.currentTarget;
-		op.current?.show(e, anchor);
+	const openPanel = (e: ReactPointerEvent<HTMLInputElement>) => {
+		const anchor = wrapperRef.current ?? (e.currentTarget as HTMLElement);
+		op.current?.show(e as unknown as MouseEvent, anchor);
+
 		const base = value.from ?? new Date();
 		setViewDate(startOfMonth(base));
+
 		const arr: Date[] = [];
 		if (value.from) arr.push(value.from);
 		if (value.to) arr.push(value.to);
 		setDraft(arr.length ? arr : null);
+
 		requestAnimationFrame(() => op.current?.align?.());
 	};
 
@@ -94,39 +109,47 @@ export const DateInput = ({
 
 	const handleApply = () => {
 		const { from, to } = normalizeDraftToRange(draft);
-		setValue({ from, to });
+		onChange({ from, to });
 		setIsOpen(false);
 		op.current?.hide();
 	};
+
 	const handleReset = () => {
 		setDraft(null);
-		setValue({ from: null, to: null });
+		onChange({ from: null, to: null });
 	};
+
 	const calendarFooter = () => (
 		<div className={styles.calendarFooter}>
-			<Button
-				size='sm'
-				variant='ghost'
-				tone='neutral'
-				onClick={handleReset}
-				children='Reset'
-			/>
-			<Button size='sm' onClick={handleApply} children='Apply' />
+			<Button size='sm' variant='ghost' tone='neutral' onClick={handleReset}>
+				Reset
+			</Button>
+			<Button size='sm' onClick={handleApply}>
+				Apply
+			</Button>
 		</div>
 	);
+
 	const shownFrom = isOpen ? draft?.[0] ?? value.from : value.from;
 	const shownTo = isOpen ? draft?.[1] ?? value.to : value.to;
+
+	const handleViewDateChange = (e: CalendarViewChangeEvent) => {
+		if (!selectingRef.current) {
+			setViewDate(startOfMonth(e.value as Date));
+		}
+	};
+
 	return (
 		<article
 			ref={wrapperRef}
 			className={clsx(styles.dateInputWrapper, className)}
 		>
-			<div className={styles.label}>{label}</div>
+			{label && <div className={styles.label}>{label}</div>}
+
 			<div className={styles.inputsRow}>
 				<div className={styles.inputCol}>
 					<input
-						// id={departId}
-						placeholder='Depart'
+						placeholder={placeholderFrom}
 						className={clsx(
 							styles.input,
 							inputClassName && styles[inputClassName]
@@ -136,10 +159,10 @@ export const DateInput = ({
 						value={shownFrom ? dateFmt.format(shownFrom) : ''}
 					/>
 				</div>
+
 				<div className={styles.inputCol}>
 					<input
-						// id={returnId}
-						placeholder='Return'
+						placeholder={placeholderTo}
 						className={clsx(
 							styles.input,
 							inputClassName && styles[inputClassName]
@@ -150,14 +173,13 @@ export const DateInput = ({
 					/>
 				</div>
 			</div>
+
 			<OverlayPanel
 				ref={op}
 				dismissable={false}
 				showCloseIcon={false}
 				appendTo='self'
-				onShow={() => {
-					setIsOpen(true);
-				}}
+				onShow={() => setIsOpen(true)}
 			>
 				<Calendar
 					locale='one-letter-monday'
@@ -169,9 +191,7 @@ export const DateInput = ({
 					onChange={onCalendarChange}
 					footerTemplate={calendarFooter}
 					viewDate={viewDate}
-					onViewDateChange={e => {
-						if (!selectingRef.current) setViewDate(startOfMonth(e.value));
-					}}
+					onViewDateChange={handleViewDateChange}
 				/>
 			</OverlayPanel>
 		</article>

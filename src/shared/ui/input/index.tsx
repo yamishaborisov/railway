@@ -1,20 +1,19 @@
-import { type JSX } from 'react';
+import { forwardRef } from 'react';
 import { PrimaryInput } from './primary';
 import { CodeInput } from './code';
 import { VisaInput } from './visa';
-import type { InputProps } from './types';
+import type { InputProps, InputVariant, BaseInputProps } from './types';
 
-export const Input = ({ variant = 'primary', ref, ...props }: InputProps) => {
-	const InputComponent = inputs[variant];
-
-	return <InputComponent {...props} variant={variant} ref={ref} />;
-};
-
-const inputs: Record<
-	NonNullable<InputProps['variant']>,
-	(p: any) => JSX.Element
-> = {
+const inputs = {
 	primary: PrimaryInput,
 	code: CodeInput,
 	visa: VisaInput,
-};
+} as const;
+
+export const Input = forwardRef<HTMLInputElement, InputProps>(
+	({ variant = 'primary', ...props }, ref) => {
+		const Component = inputs[variant];
+
+		return <Component {...props} ref={ref} />;
+	}
+);

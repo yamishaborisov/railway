@@ -3,13 +3,10 @@
 	padding: 0;
 	text-align: center;
 
-	&:focus-visible {
+	&:focus {
 		outline: none;
+		box-shadow: none;
 	}
-}
-
-.input :global(.p-inputnumber .p-inputnumber-input:focus-visible) {
-	box-shadow: none !important;
 }
 
 .input :global(.p-inputnumber-button-up),

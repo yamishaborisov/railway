@@ -1,3 +1,5 @@
+export type City = { label: string; value: string };
+
 export const CITY_ITEMS = [
 	{ label: 'Delhi, India', value: 'DEL' },
 	{ label: 'Mumbai, India', value: 'BOM' },

@@ -5,29 +5,45 @@ import {
 } from 'primereact/autocomplete';
 import { useId, useState } from 'react';
 import clsx from 'clsx';
-import { CITY_ITEMS } from './cities';
 import styles from './styles.module.scss';
 
-type City = { label: string; value: string };
+export type Option = { label: string; value: string };
 
 type InputListProps = {
-	placeholder?: 'Your City/Station' | 'Where to?';
-	label?: 'Departure' | 'Arrival';
+	value: Option | null;
+	onChange: (value: Option | null) => void;
+	items: Option[];
+	label?: string;
+	placeholder?: string;
 	className?: string;
+	inputClassName?: string;
 };
 
 export const InputList = ({
-	placeholder = 'Your City/Station',
-	label = 'Departure',
+	value,
+	onChange,
+	items,
+	label,
+	placeholder,
 	className,
+	inputClassName,
 }: InputListProps) => {
-	const [value, setValue] = useState<City | null>(null);
-	const [suggestions, setSuggestions] = useState<City[]>([]);
+	const [suggestions, setSuggestions] = useState<Option[]>([]);
+
 	const id = useId();
 
-	const search = (e: AutoCompleteCompleteEvent) => {
+	const handleComplete = (e: AutoCompleteCompleteEvent) => {
 		const q = e.query.trim().toLowerCase();
-		setSuggestions(CITY_ITEMS.filter(c => c.label.toLowerCase().includes(q)));
+
+		const filtered = !q
+			? items
+			: items.filter(item => item.label.toLowerCase().includes(q));
+
+		setSuggestions(filtered);
+	};
+
+	const handleChange = (e: AutoCompleteChangeEvent) => {
+		onChange(e.value as Option | null);
 	};
 
 	return (
@@ -37,14 +53,14 @@ export const InputList = ({
 			</label>
 			<AutoComplete
 				id={id}
-				className={styles.input}
+				className={clsx(styles.input, inputClassName)}
 				value={value}
 				suggestions={suggestions}
-				completeMethod={search}
-				onChange={(e: AutoCompleteChangeEvent) => setValue(e.value)}
+				completeMethod={handleComplete}
+				onChange={handleChange}
 				field='label'
 				panelStyle={{ marginTop: '12px' }}
-				onDropdownClick={() => setSuggestions(CITY_ITEMS)}
+				onDropdownClick={() => setSuggestions(items)}
 				placeholder={placeholder}
 			/>
 		</article>

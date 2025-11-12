@@ -1,9 +1,16 @@
-import { InputList, Button, DateInput } from '@/shared/ui';
-import { PromoCard, Header, Footer, TripBar, TrainResult } from '@/widgets';
+import { PromoCard, Header, Footer, TrainResult } from '@/widgets';
 import { demoFares } from './mock';
+import {
+	TripSearchForm,
+	type TripSearchFormValue,
+} from '@/features/trip-search-form/ui';
 import styles from './styles.module.scss';
 
 export const TrainsList = () => {
+	const handleSearch = (form: TripSearchFormValue) => {
+		console.log('Search form:', form);
+	};
+
 	return (
 		<div className={styles.page}>
 			<Header />
@@ -11,32 +18,7 @@ export const TrainsList = () => {
 			<main className={styles.main}>
 				<section className={styles.sectionTop}>
 					<h1 className={styles.title}>Search Results</h1>
-					<TripBar variantD='desktop' />
-					<div className={styles.inputListWrap}>
-						<InputList
-							label='Departure'
-							placeholder='Your City/Station'
-							className={styles.inputList}
-						/>
-						<InputList
-							label='Arrival'
-							placeholder='Where to?'
-							className={styles.inputList}
-						/>
-					</div>
-					<DateInput
-						label='Pick your lucky day'
-						className={styles.dateInput}
-						inputClassName='desktop'
-					/>
-					<Button
-						variant='solid'
-						tone='brand'
-						size='lg'
-						density='wide'
-						weight='bold'
-						children='Ticket, Please!'
-					/>
+					<TripSearchForm onSubmit={handleSearch} />
 				</section>
 
 				<section className={styles.middleSection}>
