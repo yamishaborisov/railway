@@ -1,6 +1,7 @@
 import { Card } from '@/shared/ui';
-import styles from './styles.module.scss';
 import type { FareOption } from '../model';
+
+import styles from './styles.module.scss';
 
 type FareOptionProps = {
 	option: FareOption;
