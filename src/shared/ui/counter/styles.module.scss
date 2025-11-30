@@ -1,3 +1,7 @@
+.input {
+	display: flex;
+	align-items: center;
+}
 .input :global(.p-inputnumber-input) {
 	border: none;
 	padding: 0;
@@ -19,8 +23,8 @@
 /* иконки */
 .input :global(.myicon) {
 	display: inline-block;
-	width: 16px;
-	height: 16px;
+	width: 12px;
+	height: 12px;
 	background: var(--primary-blue);
 }
 
@@ -32,4 +36,10 @@
 .input :global(.myicon-minus) {
 	-webkit-mask: url('/images/minus.svg') no-repeat center / contain;
 	mask: url('/images/minus.svg') no-repeat center / contain;
+}
+
+.decrementDisabled :global(.myicon-minus),
+.incrementDisabled :global(.myicon-plus) {
+	background: var(--primary-black-50); // сюда твоя серая переменная
+	cursor: default;
 }

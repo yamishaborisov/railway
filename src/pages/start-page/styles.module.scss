@@ -1,5 +1,5 @@
 .page {
-	min-height: 100vh;
+	min-height: 100dvh;
 	background-image: url('/images/start-bg.png');
 	background-size: cover;
 	background-position: center;
@@ -16,8 +16,7 @@
 }
 
 .hero {
-	width: 100%;
-	max-width: 1100px; // общая ширина блока
+	width: min(100%, 1100px);
 	display: flex;
 	flex-direction: column;
 	align-items: center;

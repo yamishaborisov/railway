@@ -1,1 +1,1 @@
-export type DateRange = { from: Date | null; to: Date | null };
+export type DateRange = { from: Date | null; to: Date | null }

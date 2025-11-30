@@ -1,1 +1,1 @@
-export { FareOptionCard } from './ui';
+export { FareOptionCard } from './ui'

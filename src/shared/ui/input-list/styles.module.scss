@@ -12,7 +12,7 @@
 	border: none;
 
 	&::placeholder {
-		color: #90a3bf;
+		color: var(--card-grey);
 	}
 }
 
@@ -39,6 +39,10 @@
 	font-size: 16px;
 	font-weight: 600;
 	margin-bottom: 16px;
+}
+
+.labelWhite {
+	color: var(--white);
 }
 
 .article {

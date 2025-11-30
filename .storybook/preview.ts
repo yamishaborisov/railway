@@ -1,16 +1,16 @@
-import type { Preview } from '@storybook/react-vite';
+import type { Preview } from '@storybook/react-vite'
 
-import 'primereact/resources/themes/lara-light-blue/theme.css';
-import 'primereact/resources/primereact.min.css';
-import 'primeicons/primeicons.css';
-import '../src/shared/styles/variables.scss';
-import '../src/shared/styles/global.scss';
-import 'primereact/resources/themes/lara-light-blue/theme.css';
-import 'primereact/resources/primereact.min.css';
-import 'primeicons/primeicons.css';
+import 'primereact/resources/themes/lara-light-blue/theme.css'
+import 'primereact/resources/primereact.min.css'
+import 'primeicons/primeicons.css'
+import '../src/shared/styles/variables.scss'
+import '../src/shared/styles/global.scss'
+import 'primereact/resources/themes/lara-light-blue/theme.css'
+import 'primereact/resources/primereact.min.css'
+import 'primeicons/primeicons.css'
 
 const preview: Preview = {
-	tags: ['autodocs'],
-};
+    tags: ['autodocs'],
+}
 
-export default preview;
+export default preview

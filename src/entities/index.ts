@@ -1,1 +1,1 @@
-export * from './fare-option';
+export * from './fare-option'

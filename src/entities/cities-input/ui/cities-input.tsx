@@ -1,12 +1,12 @@
-import { InputList, type Option } from '@/shared/ui';
-import { CITY_ITEMS } from '../model/mock';
+import { InputList, type Option } from '@/shared'
+import { CITY_ITEMS } from '../model/mock'
 
-export type City = Option;
+export type City = Option
 
 type CityInputProps = Omit<React.ComponentProps<typeof InputList>, 'items'> & {
-	items?: City[];
-};
+    items?: City[]
+}
 
 export const CityInput = ({ items = CITY_ITEMS, ...props }: CityInputProps) => {
-	return <InputList items={items} {...props} />;
-};
+    return <InputList items={items} {...props} />
+}

@@ -50,13 +50,8 @@
 	display: none;
 	width: 30px;
 	height: 24px;
-}
-
-.headerBurgerLight {
-	background-image: url('/images/burger.svg');
-}
-.headerBurgerDark {
-	background-image: url('/images/burger-white.svg');
+	background: transparent;
+	padding: 0;
 }
 
 @media (max-width: 768px) {
