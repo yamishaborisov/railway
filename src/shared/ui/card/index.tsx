@@ -4,9 +4,9 @@ import styles from './styles.module.scss'
 
 type CardProps = {
     children: ReactNode
-    size?: 'normal' | 'mobile' | 'mini'
+    size?: 'normal' | 'mobile' | 'mini' | 'label'
     credit?: boolean
-    border?: 'none' | 'solid' | 'dashed'
+    border?: 'none' | 'solid' | 'dashed' | 'primary'
     bg?: 'white' | 'grey' | 'red' | 'green' | 'yellow'
     className?: string
     id?: string

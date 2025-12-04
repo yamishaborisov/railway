@@ -8,7 +8,7 @@ const meta: Meta<typeof Card> = {
     argTypes: {
         size: {
             control: { type: 'inline-radio' },
-            options: ['normal', 'mobile', 'mini'],
+            options: ['normal', 'mobile', 'mini', 'label'],
         },
         credit: { control: { type: 'boolean' } },
         bg: {
@@ -17,7 +17,7 @@ const meta: Meta<typeof Card> = {
         },
         border: {
             control: { type: 'inline-radio' },
-            options: ['none', 'solid', 'dashed'],
+            options: ['none', 'solid', 'dashed', 'primary'],
         },
         className: { control: false },
         id: { control: 'text' },

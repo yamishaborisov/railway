@@ -2,5 +2,5 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 pnpm format:fix
-pnpm lint
+pnpm lint:fix
 pnpm audit

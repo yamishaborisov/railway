@@ -16,6 +16,12 @@
 	padding: 24px 16px;
 }
 
+.label {
+	padding: 5px 15px;
+	display: inline-block;
+	width: auto;
+}
+
 .bg-white {
 	background-color: var(--white);
 }
@@ -36,6 +42,10 @@
 .bd-none {
 	border: none;
 	border-radius: 10px;
+}
+.bd-primary {
+	border: 1px solid var(--primary-blue);
+	border-radius: 8px;
 }
 .bd-solid {
 	border: 1px solid var(--primary-black-50);

@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import { FareOptionCard } from '@/entities/'
-import { Button, Card } from '@/shared'
+import { Card, TrainResultLabel } from '@/shared'
 import styles from './styles.module.scss'
 import { type FareItem, type LegInfo } from './types'
 
@@ -29,9 +29,7 @@ export const TrainResult = ({
                 <h3 className={styles.title}>{title}</h3>
                 <div className={styles.runs}>
                     <span className={styles.runsLabel}>Runs on</span>
-                    <Button size="sm" variant="outline" tone="brand" weight="regular">
-                        {runsOn}
-                    </Button>
+                    <TrainResultLabel timing={runsOn} />
                 </div>
             </header>
             <section className={styles.legs}>
