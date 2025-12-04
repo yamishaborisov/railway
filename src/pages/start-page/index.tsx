@@ -1,6 +1,6 @@
 import { useNavigate } from '@tanstack/react-router'
-import { TripSearchForm } from '@/features/trip-search-form/ui'
 import { type TripSearchFormValue } from '@/features/trip-search-form/model/types'
+import { TripSearchForm } from '@/features/trip-search-form/ui'
 import { Header } from '@/widgets'
 import styles from './styles.module.scss'
 
