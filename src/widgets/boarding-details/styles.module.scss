@@ -1,0 +1,50 @@
+.card {
+	max-width: 640px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.head {
+	font-size: 20px;
+}
+
+.inf {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.classInfo {
+	color: var(--primary-blue);
+}
+
+.title {
+	margin: 0;
+	font-size: 16px;
+	font-weight: 500;
+	font-family: var(--font-sans);
+	color: var(--primary-black);
+}
+
+.legs {
+	display: flex;
+	align-items: center;
+	width: 592px;
+	justify-content: space-between;
+}
+
+.fares {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 592px;
+}
+.FOCwrapper {
+	width: 160px;
+}
+
+.duration {
+	font-size: 10px;
+	color: var(--primary-black-50);
+}
