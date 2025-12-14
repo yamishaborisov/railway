@@ -1,4 +1,8 @@
-import { BoardingDetails, Footer, Header, PassengerProfile } from '@/widgets'
+import { MealCard } from '@/entities/meal-card'
+import { mealsMock } from '@/entities/meal-card/mock'
+import { Button } from '@/shared'
+import { BoardingDetails, Footer, Header, Offers, PassengerProfile } from '@/widgets'
+import { demoOffers } from '@/widgets/offers/mocks'
 
 import styles from './styles.module.scss'
 
@@ -27,6 +31,24 @@ export const ReviewBooking = () => {
                     <h1 className={styles.title}>Review your booking</h1>
                     <BoardingDetails {...boardingDetailsData} />
                     <PassengerProfile />
+                </section>
+                <section className={styles.mealsSection}>
+                    <div className={styles.mealsWrapper}>
+                        {mealsMock.map((meal) => (
+                            <MealCard
+                                key={meal.title}
+                                {...meal}
+                                onAddToTicket={() => console.debug('added:', meal.title)}
+                            />
+                        ))}
+                    </div>
+
+                    <Button className={styles.viewBtn} size="md" variant="ghost">
+                        View more
+                    </Button>
+                </section>
+                <section className={styles.offersSection}>
+                    <Offers className={styles.offers} offers={demoOffers} />
                 </section>
             </main>
             <Footer />

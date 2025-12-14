@@ -4,7 +4,7 @@ import styles from './styles.module.scss'
 
 type CardProps = {
     children: ReactNode
-    size?: 'normal' | 'mobile' | 'mini' | 'label'
+    size?: 'normal' | 'mobile' | 'mini' | 'label' | 'meal'
     credit?: boolean
     border?: 'none' | 'solid' | 'dashed' | 'primary'
     bg?: 'white' | 'grey' | 'red' | 'green' | 'yellow' | 'purple'

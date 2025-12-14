@@ -3,4 +3,4 @@
 
 pnpm format:fix
 pnpm lint:fix
-pnpm audit
+git add -u

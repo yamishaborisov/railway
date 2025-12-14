@@ -1,0 +1,17 @@
+.mealCard {
+	max-width: 192px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+}
+.content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 12px;
+	font-size: 14px;
+}
+.title,
+.price {
+	margin: 0;
+}
