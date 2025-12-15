@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { ApplyCode } from './index'
+import { ExtraBaggage } from './index'
 
-const meta: Meta<typeof ApplyCode> = {
-    title: 'Entities/ApplyCode',
-    component: ApplyCode,
+const meta: Meta<typeof ExtraBaggage> = {
+    title: 'Entities/ExtraBaggage',
+    component: ExtraBaggage,
     tags: ['autodocs'],
     parameters: {
         layout: 'centered',

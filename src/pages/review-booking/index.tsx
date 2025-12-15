@@ -1,3 +1,5 @@
+import { ApplyCode } from '@/entities/apply-code'
+import { ExtraBaggage } from '@/entities/extra-baggage'
 import { MealCard } from '@/entities/meal-card'
 import { mealsMock } from '@/entities/meal-card/mock'
 import { Button } from '@/shared'
@@ -49,6 +51,10 @@ export const ReviewBooking = () => {
                 </section>
                 <section className={styles.offersSection}>
                     <Offers className={styles.offers} offers={demoOffers} />
+                </section>
+                <section className={styles.promoSection}>
+                    <ApplyCode />
+                    <ExtraBaggage />
                 </section>
             </main>
             <Footer />

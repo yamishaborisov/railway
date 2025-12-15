@@ -1,0 +1,16 @@
+.card {
+    width: 100%;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--primary-black);
+    margin: 0;
+}
