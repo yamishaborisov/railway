@@ -65,6 +65,28 @@ export const ReviewBooking = () => {
                     <ExtraBaggage />
                 </section>
                 <BillDetails items={billItems} className={styles.billDet} />
+                <p className={styles.aboutBill}>
+                    Discounts, offers and price concessions will be applied later during payment
+                </p>
+                <section className={styles.mainButtonsSection}>
+                    <Button className={styles.viewBtn1} size="lg" variant="solid">
+                        Book now
+                    </Button>
+                    <Button className={styles.viewBtn2} size="lg" variant="outline" tone="danger">
+                        Cancel
+                    </Button>
+                </section>
+                <section className={styles.linksSection}>
+                    <a href="#" className={styles.link}>
+                        Cancellation Policy
+                    </a>
+                    <a href="#" className={styles.link}>
+                        Terms & Conditions
+                    </a>
+                    <a href="#" className={styles.link}>
+                        Travel Insurance
+                    </a>
+                </section>
             </main>
             <Footer />
         </div>
