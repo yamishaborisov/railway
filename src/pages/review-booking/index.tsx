@@ -3,7 +3,7 @@ import { ExtraBaggage } from '@/entities/extra-baggage'
 import { MealCard } from '@/entities/meal-card'
 import { mealsMock } from '@/entities/meal-card/mock'
 import { Button } from '@/shared'
-import { BoardingDetails, Footer, Header, Offers, PassengerProfile } from '@/widgets'
+import { BillDetails, BoardingDetails, Footer, Header, Offers, PassengerProfile } from '@/widgets'
 import { demoOffers } from '@/widgets/offers/mocks'
 
 import styles from './styles.module.scss'
@@ -23,6 +23,14 @@ const boardingDetailsData = {
     duration: '8 hours',
     classInfo: 'Class 2A & Tatkal Quota',
 } as const
+
+const billItems = [
+    { label: 'Base Ticket Fare', amount: 1000 },
+    { label: 'Paneer Tikka Rice Bowl - Mini', amount: 180 },
+    { label: 'Extra Baggage', amount: 500 },
+    { label: 'CGST & SGST', amount: 500 },
+    { label: 'Discount', amount: -436 },
+]
 
 export const ReviewBooking = () => {
     return (
@@ -56,6 +64,7 @@ export const ReviewBooking = () => {
                     <ApplyCode />
                     <ExtraBaggage />
                 </section>
+                <BillDetails items={billItems} className={styles.billDet} />
             </main>
             <Footer />
         </div>

@@ -1,3 +1,4 @@
+export * from './bill-details'
 export * from './boarding-details'
 export * from './footer'
 export * from './header'

@@ -1,0 +1,56 @@
+.card {
+	max-width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.title {
+	margin: 0;
+	font-size: 20px;
+	font-weight: 500;
+	font-family: var(--font-sans);
+	color: var(--primary-black);
+}
+
+.list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: var(--primary-black-50);
+}
+
+.label {
+	font-size: 14px;
+	color: var(--primary-black-70);
+}
+
+.amount {
+	font-size: 14px;
+	color: var(--primary-black-50);
+}
+
+.discount {
+	color: var(--primary-black-50);
+	font-weight: 600;
+}
+
+.total {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 16px;
+	border-top: 1px solid var(--primary-black-10);
+	font-size: 18px;
+	font-weight: 500;
+	color: var(--primary-black);
+}
