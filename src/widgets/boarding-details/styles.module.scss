@@ -48,3 +48,23 @@
 	font-size: 10px;
 	color: var(--primary-black-50);
 }
+
+.traveller {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	border-top: 1px solid var(--primary-black-10);
+	padding-top: 16px;
+}
+
+.travellerHead {
+	font-size: 14px;
+	font-weight: 600;
+	margin: 0 0 4px;
+}
+
+.travellerRow {
+	display: flex;
+	justify-content: space-between;
+	font-size: 14px;
+}

@@ -1,5 +1,5 @@
 import { createRootRoute, createRoute, Outlet } from '@tanstack/react-router'
-import { ReviewBooking, StartPage, TrainsList } from '@/pages'
+import { Payment, ReviewBooking, StartPage, TrainsList } from '@/pages'
 
 const rootRoute = createRootRoute({ component: () => <Outlet /> })
 
@@ -16,8 +16,18 @@ const trainsRoute = createRoute({
 })
 const reviewBookingRoute = createRoute({
     getParentRoute: () => rootRoute,
-    path: '/',
+    path: '/oe',
     component: ReviewBooking,
 })
+const PaymentRoute = createRoute({
+    getParentRoute: () => rootRoute,
+    path: '/',
+    component: Payment,
+})
 
-export const routeTree = rootRoute.addChildren([indexRoute, trainsRoute, reviewBookingRoute])
+export const routeTree = rootRoute.addChildren([
+    indexRoute,
+    trainsRoute,
+    reviewBookingRoute,
+    PaymentRoute,
+])

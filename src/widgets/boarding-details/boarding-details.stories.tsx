@@ -53,3 +53,17 @@ export const OvernightTrain: Story = {
         duration: '7 hours 55 minutes',
     },
 }
+
+export const WithTraveller: Story = {
+    args: {
+        traveller: {
+            name: 'Raj Koothrappali',
+            age: 24,
+            items: [
+                { label: 'Extra Baggage', value: 1 },
+                { label: 'Paneer Tikka Rice Bowl - Mini', value: 1 },
+            ],
+            email: 'Koothrappali@gmail.com',
+        },
+    },
+}

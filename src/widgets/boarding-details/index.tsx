@@ -8,6 +8,18 @@ type BoardingPoint = {
     location: string
 }
 
+type TravellerItem = {
+    label: string
+    value: string | number
+}
+
+type TravellerDetails = {
+    name: string
+    age: number
+    items?: readonly TravellerItem[]
+    email?: string
+}
+
 export type BoardingDetailsProps = {
     title: string
     from: BoardingPoint
@@ -16,6 +28,7 @@ export type BoardingDetailsProps = {
     runsOn?: string
     classInfo?: string
     className?: string
+    traveller?: TravellerDetails
 }
 
 export const BoardingDetails = ({
@@ -26,6 +39,7 @@ export const BoardingDetails = ({
     runsOn,
     classInfo = 'Class 2A & Tatkal Quota',
     className,
+    traveller,
 }: BoardingDetailsProps) => {
     return (
         <Card size="normal" bg="purple" border="solid" className={clsx(styles.card, className)}>
@@ -53,6 +67,28 @@ export const BoardingDetails = ({
                     <div className={styles.loc}>{to.location}</div>
                 </div>
             </section>
+
+            {traveller && (
+                <section className={styles.traveller}>
+                    <h2 className={styles.travellerHead}>Traveller Details</h2>
+                    <div className={styles.travellerRow}>
+                        <span>{traveller.name}</span>
+                        <span>{traveller.age} Yrs</span>
+                    </div>
+                    {traveller.items?.map((item) => (
+                        <div key={item.label} className={styles.travellerRow}>
+                            <span>{item.label}</span>
+                            <span>{item.value}</span>
+                        </div>
+                    ))}
+                    {traveller.email && (
+                        <div className={styles.travellerRow}>
+                            <span>E-Tickets will be sent to:</span>
+                            <span>{traveller.email}</span>
+                        </div>
+                    )}
+                </section>
+            )}
         </Card>
     )
 }
