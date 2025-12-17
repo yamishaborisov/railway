@@ -10,9 +10,18 @@ type RadioBtnProps = {
     checked: boolean
     onChange: (value: string) => void
     className?: string
+    labelClassName?: string
 }
 
-export const RadioBtn = ({ name, value, label, checked, onChange, className }: RadioBtnProps) => {
+export const RadioBtn = ({
+    name,
+    value,
+    label,
+    checked,
+    onChange,
+    className,
+    labelClassName,
+}: RadioBtnProps) => {
     const id = useId()
 
     return (
@@ -26,7 +35,7 @@ export const RadioBtn = ({ name, value, label, checked, onChange, className }: R
                     onChange={(e) => onChange(e.value)}
                     checked={checked}
                 />
-                <label className={styles.label} htmlFor={id}>
+                <label className={clsx(styles.label, labelClassName)} htmlFor={id}>
                     {label}
                 </label>
             </div>

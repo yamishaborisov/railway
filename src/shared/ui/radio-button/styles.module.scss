@@ -16,7 +16,10 @@
 	font-family: var(--font-sans);
 	font-weight: 400;
 }
-
+.payForm {
+	font-size: 16px;
+	font-weight: 600;
+}
 .root :global(.p-radiobutton .p-radiobutton-box) {
 	border-color: #c7d0de;
 	background-color: #c7d0de;

@@ -1,4 +1,5 @@
 import { ApplyCode, ExtraBaggage } from '@/entities'
+import { PayForm } from '@/features/pay-form'
 import { BillDetails, BoardingDetails, Footer, Header, Offers } from '@/widgets'
 import { demoOffers } from '@/widgets/offers/mocks'
 import styles from './styles.module.scss'
@@ -53,6 +54,20 @@ export const Payment = () => {
                     <ExtraBaggage />
                 </section>
                 <BillDetails items={billItems} className={styles.billDet} />
+                <section className={styles.paymentFormSection}>
+                    <PayForm />
+                </section>
+                <section className={styles.linksSection}>
+                    <a href="#" className={styles.link}>
+                        Cancellation Policy
+                    </a>
+                    <a href="#" className={styles.link}>
+                        Terms & Conditions
+                    </a>
+                    <a href="#" className={styles.link}>
+                        Travel Insurance
+                    </a>
+                </section>
             </main>
             <Footer />
         </div>

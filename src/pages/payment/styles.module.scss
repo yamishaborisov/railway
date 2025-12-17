@@ -40,8 +40,23 @@
 	gap: 32px;
 }
 
-.billDet {
+.billDet,
+.paymentFormSection {
 	max-width: 640px;
 	width: 100%;
 	margin: 0 auto;
+}
+.linksSection {
+	max-width: 640px;
+	width: 100%;
+	margin: 0 auto;
+	// margin-bottom: 60px;
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+}
+.link {
+	color: var(--primary-black-50);
+	font-size: 14px;
+	text-decoration: none;
 }
