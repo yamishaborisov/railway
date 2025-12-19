@@ -9,6 +9,13 @@
 	font-size: 20px;
 }
 
+.headRow {
+	display: flex;
+	justify-content: space-between;
+	font-size: 14px;
+	font-weight: 500;
+}
+
 .inf {
 	display: flex;
 	align-items: center;
@@ -67,4 +74,18 @@
 	display: flex;
 	justify-content: space-between;
 	font-size: 14px;
+}
+
+.travellerRowInline {
+	justify-content: flex-start;
+	color: var(--primary-black-50);
+}
+
+.totalFare {
+	display: flex;
+	justify-content: space-between;
+	font-size: 16px;
+	font-weight: 600;
+	border-top: 1px solid var(--primary-black-10);
+	padding-top: 16px;
 }

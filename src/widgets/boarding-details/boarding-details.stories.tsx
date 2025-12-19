@@ -67,3 +67,23 @@ export const WithTraveller: Story = {
         },
     },
 }
+
+export const Confirmation: Story = {
+    args: {
+        variant: 'confirmation',
+        pnr: '1234567890',
+        transactionId: '351511859256378',
+        traveller: {
+            name: 'Raj Koothrappali',
+            age: 24,
+            items: [
+                { label: 'Booking Status', value: 'Confirmed (CNF)' },
+                { label: 'Seat/Coach no.', value: 'Class 2A & Tatkal Quota' },
+                { label: 'Extra Baggage', value: 1 },
+                { label: 'Paneer Tikka Rice Bowl - Mini', value: 1 },
+            ],
+            email: 'Koothrappali@gmail.com',
+        },
+        totalFare: 1744,
+    },
+}

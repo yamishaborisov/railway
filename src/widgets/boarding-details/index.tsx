@@ -21,6 +21,7 @@ type TravellerDetails = {
 }
 
 export type BoardingDetailsProps = {
+    variant?: 'booking' | 'confirmation'
     title: string
     from: BoardingPoint
     to: BoardingPoint
@@ -29,9 +30,13 @@ export type BoardingDetailsProps = {
     classInfo?: string
     className?: string
     traveller?: TravellerDetails
+    pnr?: string
+    transactionId?: string
+    totalFare?: number
 }
 
 export const BoardingDetails = ({
+    variant = 'booking',
     title,
     from,
     to,
@@ -40,14 +45,31 @@ export const BoardingDetails = ({
     classInfo = 'Class 2A & Tatkal Quota',
     className,
     traveller,
+    pnr,
+    transactionId,
+    totalFare,
 }: BoardingDetailsProps) => {
+    const isConfirmation = variant === 'confirmation'
+
     return (
-        <Card size="normal" bg="purple" border="solid" className={clsx(styles.card, className)}>
+        <Card
+            size="normal"
+            bg={isConfirmation ? 'white' : 'purple'}
+            border="solid"
+            className={clsx(styles.card, className)}
+        >
             <header className={styles.header}>
-                <h1 className={styles.head}>Boarding Details</h1>
+                {isConfirmation ? (
+                    <p className={styles.headRow}>
+                        <span>PNR No: {pnr}</span>
+                        <span>Transaction ID : {transactionId}</span>
+                    </p>
+                ) : (
+                    <h1 className={styles.head}>Boarding Details</h1>
+                )}
                 <div className={styles.inf}>
                     <p className={styles.title}>{title}</p>
-                    <p className={styles.classInfo}>{classInfo}</p>
+                    {!isConfirmation && <p className={styles.classInfo}>{classInfo}</p>}
                 </div>
             </header>
             <section className={styles.legs}>
@@ -73,20 +95,43 @@ export const BoardingDetails = ({
                     <h2 className={styles.travellerHead}>Traveller Details</h2>
                     <div className={styles.travellerRow}>
                         <span>{traveller.name}</span>
-                        <span>{traveller.age} Yrs</span>
+                        {!isConfirmation && <span>{traveller.age} Yrs</span>}
                     </div>
                     {traveller.items?.map((item) => (
-                        <div key={item.label} className={styles.travellerRow}>
-                            <span>{item.label}</span>
-                            <span>{item.value}</span>
+                        <div
+                            key={item.label}
+                            className={clsx(
+                                styles.travellerRow,
+                                isConfirmation && styles.travellerRowInline,
+                            )}
+                        >
+                            {isConfirmation ? (
+                                <span>
+                                    {item.label}: {item.value}
+                                </span>
+                            ) : (
+                                <>
+                                    <span>{item.label}</span>
+                                    <span>{item.value}</span>
+                                </>
+                            )}
                         </div>
                     ))}
                     {traveller.email && (
                         <div className={styles.travellerRow}>
-                            <span>E-Tickets will be sent to:</span>
+                            <span>
+                                E-Tickets {isConfirmation ? 'has been' : 'will be'} sent to:
+                            </span>
                             <span>{traveller.email}</span>
                         </div>
                     )}
+                </section>
+            )}
+
+            {isConfirmation && totalFare !== undefined && (
+                <section className={styles.totalFare}>
+                    <span>Total Fare</span>
+                    <span>₹{totalFare.toFixed(2)}</span>
                 </section>
             )}
         </Card>

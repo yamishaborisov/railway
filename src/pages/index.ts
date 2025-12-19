@@ -1,3 +1,4 @@
+export * from './booked-page'
 export * from './payment'
 export * from './review-booking'
 export * from './start-page'
