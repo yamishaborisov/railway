@@ -43,14 +43,14 @@ export const BookedInfo = () => {
                         Congratulations! <br /> You have successfully booked tickets
                     </h1>
                 </section>
-                <section className={styles.detailsSection}>
+                <div className={styles.details}>
                     <BoardingDetails {...boardingDetailsData} />
-                </section>
+                </div>
 
-                <section className={styles.qrSection}>
+                <div className={styles.qr}>
                     <QRCard />
-                </section>
-                <section className={styles.linksSection}>
+                </div>
+                <nav className={styles.links}>
                     <a href="#" className={styles.link}>
                         Cancellation Policy
                     </a>
@@ -60,7 +60,7 @@ export const BookedInfo = () => {
                     <a href="#" className={styles.link}>
                         Travel Insurance
                     </a>
-                </section>
+                </nav>
             </main>
             <Footer />
         </div>

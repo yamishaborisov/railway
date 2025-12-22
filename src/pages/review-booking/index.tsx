@@ -1,3 +1,4 @@
+import { useNavigate } from '@tanstack/react-router'
 import { ApplyCode } from '@/entities/apply-code'
 import { ExtraBaggage } from '@/entities/extra-baggage'
 import { MealCard } from '@/entities/meal-card'
@@ -33,6 +34,8 @@ const billItems = [
 ]
 
 export const ReviewBooking = () => {
+    const navigate = useNavigate()
+
     return (
         <div className={styles.page}>
             <Header />
@@ -69,14 +72,25 @@ export const ReviewBooking = () => {
                     Discounts, offers and price concessions will be applied later during payment
                 </p>
                 <section className={styles.mainButtonsSection}>
-                    <Button className={styles.viewBtn1} size="lg" variant="solid">
+                    <Button
+                        className={styles.viewBtn1}
+                        size="lg"
+                        variant="solid"
+                        onClick={() => navigate({ to: '/payment' })}
+                    >
                         Book now
                     </Button>
-                    <Button className={styles.viewBtn2} size="lg" variant="outline" tone="danger">
+                    <Button
+                        className={styles.viewBtn2}
+                        size="lg"
+                        variant="outline"
+                        tone="danger"
+                        onClick={() => navigate({ to: '/trains' })}
+                    >
                         Cancel
                     </Button>
                 </section>
-                <section className={styles.linksSection}>
+                <nav className={styles.links}>
                     <a href="#" className={styles.link}>
                         Cancellation Policy
                     </a>
@@ -86,7 +100,7 @@ export const ReviewBooking = () => {
                     <a href="#" className={styles.link}>
                         Travel Insurance
                     </a>
-                </section>
+                </nav>
             </main>
             <Footer />
         </div>

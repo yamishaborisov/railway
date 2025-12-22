@@ -10,6 +10,7 @@ type CardProps = {
     bg?: 'white' | 'grey' | 'red' | 'green' | 'yellow' | 'purple'
     className?: string
     id?: string
+    onClick?: () => void
 }
 
 export const Card = ({
@@ -20,6 +21,7 @@ export const Card = ({
     bg = 'white',
     className,
     id,
+    onClick,
 }: CardProps) => (
     <div
         id={id}
@@ -30,6 +32,7 @@ export const Card = ({
             styles[`bd-${border}`],
             className,
         )}
+        onClick={onClick}
     >
         {children}
     </div>

@@ -1,3 +1,4 @@
+import { Link } from '@tanstack/react-router'
 import clsx from 'clsx'
 import { HEADER_NAV, Icons } from '@/shared'
 import styles from './styles.module.scss'
@@ -15,10 +16,10 @@ export const Header = ({ className, bg = 'light', ...props }: HeaderProps) => {
     return (
         <header className={clsx(styles.header, styles[bg], className)}>
             <div className={styles.inner}>
-                <a className={styles.headerBrand} href="#">
+                <Link className={styles.headerBrand} to="/">
                     <img src={img('railway')} className={styles.headerLogo} />
                     <span className={styles.headerBrandName}>Railway</span>
-                </a>
+                </Link>
 
                 <nav className={styles.headerNav}>
                     <ul className={styles.headerNavList}>

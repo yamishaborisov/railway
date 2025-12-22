@@ -1,13 +1,18 @@
+import { useNavigate } from '@tanstack/react-router'
 import { type TripSearchFormValue } from '@/features/trip-search-form/model/types'
 import { TripSearchForm } from '@/features/trip-search-form/ui'
 import { Footer, Header, PromoCard, TrainResult } from '@/widgets'
-
 import { demoTrains, promoCardsMock } from './mock'
 import styles from './styles.module.scss'
 
 export const TrainsList = () => {
     const handleSearch = (form: TripSearchFormValue) => {
         // console.log('Search form:', form)
+    }
+    const navigate = useNavigate()
+
+    const handleClick = () => {
+        navigate({ to: '/review' })
     }
 
     return (
@@ -45,6 +50,7 @@ export const TrainsList = () => {
                             to={train.to}
                             duration={train.duration}
                             fares={train.fares}
+                            onClick={handleClick}
                         />
                     ))}
                 </section>

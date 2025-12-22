@@ -21,8 +21,12 @@
 	font-weight: 600;
 }
 .root :global(.p-radiobutton .p-radiobutton-box) {
-	border-color: #c7d0de;
-	background-color: #c7d0de;
+	border-color: var(--card-grey-50);
+	background-color: var(--card-grey-50);
+}
+.payment :global(.p-radiobutton .p-radiobutton-box) {
+	border-color: var(--card-grey);
+	background-color: var(--white);
 }
 
 .root :global(.p-radiobutton.p-highlight .p-radiobutton-box) {

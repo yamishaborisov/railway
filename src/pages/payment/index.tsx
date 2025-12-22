@@ -1,3 +1,4 @@
+import { useNavigate } from '@tanstack/react-router'
 import { ApplyCode, ExtraBaggage } from '@/entities'
 import { PayForm } from '@/features/pay-form'
 import { BillDetails, BoardingDetails, Footer, Header, Offers } from '@/widgets'
@@ -38,6 +39,8 @@ const billItems = [
 ]
 
 export const Payment = () => {
+    const navigate = useNavigate()
+
     return (
         <div className={styles.page}>
             <Header />
@@ -49,15 +52,18 @@ export const Payment = () => {
                     <BoardingDetails {...boardingDetailsData} />
                     <Offers className={styles.offers} offers={demoOffers} />
                 </section>
-                <section className={styles.promoSection}>
+                <div className={styles.promo}>
                     <ApplyCode />
                     <ExtraBaggage />
-                </section>
+                </div>
                 <BillDetails items={billItems} className={styles.billDet} />
                 <section className={styles.paymentFormSection}>
-                    <PayForm />
+                    <PayForm
+                        onSubmit={() => navigate({ to: '/booked' })}
+                        onCancel={() => navigate({ to: '/review' })}
+                    />
                 </section>
-                <section className={styles.linksSection}>
+                <nav className={styles.links}>
                     <a href="#" className={styles.link}>
                         Cancellation Policy
                     </a>
@@ -67,7 +73,7 @@ export const Payment = () => {
                     <a href="#" className={styles.link}>
                         Travel Insurance
                     </a>
-                </section>
+                </nav>
             </main>
             <Footer />
         </div>

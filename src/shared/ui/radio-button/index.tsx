@@ -11,6 +11,7 @@ type RadioBtnProps = {
     onChange: (value: string) => void
     className?: string
     labelClassName?: string
+    type?: 'usual' | 'payment'
 }
 
 export const RadioBtn = ({
@@ -21,11 +22,12 @@ export const RadioBtn = ({
     onChange,
     className,
     labelClassName,
+    type,
 }: RadioBtnProps) => {
     const id = useId()
 
     return (
-        <div className={clsx(styles.root, className)}>
+        <div className={clsx(styles.root, type === 'payment' && styles.payment, className)}>
             <div className={styles.item}>
                 <RadioButton
                     inputId={id}

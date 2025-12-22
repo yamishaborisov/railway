@@ -1,3 +1,4 @@
+import { useNavigate } from '@tanstack/react-router'
 import clsx from 'clsx'
 import { FareOptionCard } from '@/entities/'
 import { Card, TrainResultLabel } from '@/shared'
@@ -12,6 +13,7 @@ type TrainResultCardProps = {
     duration?: string
     fares: FareItem[]
     className?: string
+    onClick?: () => void
 }
 
 export const TrainResult = ({
@@ -22,9 +24,16 @@ export const TrainResult = ({
     duration = '',
     fares,
     className,
+    onClick,
 }: TrainResultCardProps) => {
     return (
-        <Card size="normal" border="solid" bg="white" className={clsx(styles.card, className)}>
+        <Card
+            size="normal"
+            border="solid"
+            bg="white"
+            className={clsx(styles.card, className)}
+            onClick={onClick}
+        >
             <header className={styles.header}>
                 <h3 className={styles.title}>{title}</h3>
                 <div className={styles.runs}>

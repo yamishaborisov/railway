@@ -58,6 +58,7 @@ export const PayForm = ({ onSubmit, onCancel }: PayFormProps) => {
                                             checked={field.value === 'credit-card'}
                                             onChange={field.onChange}
                                             labelClassName={styles.payFormLabel}
+                                            type="payment"
                                         />
                                     </div>
                                 )}
@@ -147,6 +148,7 @@ export const PayForm = ({ onSubmit, onCancel }: PayFormProps) => {
                                     checked={field.value === 'paypal'}
                                     onChange={field.onChange}
                                     labelClassName={styles.payFormLabel}
+                                    type="payment"
                                 />
                             )}
                         />
@@ -165,6 +167,7 @@ export const PayForm = ({ onSubmit, onCancel }: PayFormProps) => {
                                     checked={field.value === 'bitcoin'}
                                     onChange={field.onChange}
                                     labelClassName={styles.payFormLabel}
+                                    type="payment"
                                 />
                             )}
                         />
