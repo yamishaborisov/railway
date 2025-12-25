@@ -34,17 +34,10 @@ const BookedRoute = createRoute({
     component: BookedInfo,
 })
 
-// const NotFoundRoute = createRoute({
-// 	getParentRoute: () => rootRoute,
-// 	path: '*',
-// 	component: NotFoundPage,
-// });
-
 export const routeTree = rootRoute.addChildren([
     indexRoute,
     trainsRoute,
     reviewBookingRoute,
     PaymentRoute,
     BookedRoute,
-    // NotFoundRofute,
 ])

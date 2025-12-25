@@ -1,3 +1,5 @@
+@use 'shared/styles/mixins' as m;
+
 .inputListWrap {
 	width: 100%;
 	display: flex;
@@ -6,11 +8,24 @@
 }
 
 .inputList {
-	width: 304px;
+	min-width: 304px;
 }
 
 .dateInput {
 	width: 100%;
 	margin-top: 24px;
 	margin-bottom: 24px;
+}
+
+@include m.to(sm) {
+	.sectionTop {
+		display: flex;
+		flex-direction: column;
+	}
+	.inputListWrap {
+		flex-direction: column;
+	}
+	.inputList {
+		min-width: 100%;
+	}
 }

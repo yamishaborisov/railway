@@ -13,7 +13,6 @@ export default meta
 
 type Story = StoryObj<typeof Button>
 
-// 1) Brand / Solid — дефолт
 export const BrandSolid: Story = {
     args: {
         size: 'md',

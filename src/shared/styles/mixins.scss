@@ -1,0 +1,18 @@
+@use 'sass:map';
+@use 'shared/styles/breakpoints' as v;
+
+@mixin to($key) {
+	$to: map.get(v.$bp, $key);
+
+	@media (max-width: ($to - 1px)) {
+		@content;
+	}
+}
+
+@mixin from($key) {
+	$from: map.get(v.$bp, $key);
+
+	@media (min-width: $from) {
+		@content;
+	}
+}

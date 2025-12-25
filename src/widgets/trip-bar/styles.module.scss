@@ -1,3 +1,5 @@
+@use 'shared/styles/mixins' as m;
+
 .article {
 	display: flex;
 	justify-content: space-between;
@@ -34,14 +36,22 @@
 	height: 20px;
 }
 
-@media (max-width: 900px) {
+@include m.to(sm) {
 	.counterSmall :global(.p-inputnumber-input) {
-		width: 24px;
+		width: 12px;
 		font-size: 12px;
 	}
 
 	.article {
 		padding: 0 8px;
-		gap: 25.5px;
+	}
+
+	.inputCounterGroup {
+		gap: 0;
+
+		.inputListWrap {
+			display: flex;
+			flex-direction: column;
+		}
 	}
 }

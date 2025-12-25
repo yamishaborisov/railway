@@ -1,3 +1,5 @@
+@use 'shared/styles/mixins' as m;
+
 .input {
 	display: flex;
 	align-items: center;
@@ -40,6 +42,9 @@
 
 .decrementDisabled :global(.myicon-minus),
 .incrementDisabled :global(.myicon-plus) {
-	background: var(--primary-black-50); // сюда твоя серая переменная
+	background: var(--primary-black-50);
 	cursor: default;
+}
+
+@include m.to(sm) {
 }

@@ -1,4 +1,5 @@
 @use '/src/shared/styles/variables' as *;
+@use 'shared/styles/mixins' as m;
 
 .dateInputWrapper {
 	display: flex;
@@ -98,4 +99,11 @@
 .dateInputWrapper
 	:global(.p-datepicker-multiple-month .p-datepicker-group-container) {
 	gap: 32px;
+}
+
+@include m.to(sm) {
+	.inputsRow {
+		flex-direction: column;
+		gap: 16px;
+	}
 }

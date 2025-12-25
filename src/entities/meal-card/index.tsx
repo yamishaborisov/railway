@@ -5,7 +5,7 @@ import styles from './styles.module.scss'
 export type MealCardProps = {
     title: string
     price: number
-    image: string // url
+    image: string
     onAddToTicket?: () => void
     className?: string
 }

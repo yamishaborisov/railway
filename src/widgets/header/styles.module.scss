@@ -1,3 +1,5 @@
+@use 'shared/styles/mixins' as m;
+
 .header {
 	font-family: var(--font-sans);
 	font-weight: 400;
@@ -54,18 +56,21 @@
 	padding: 0;
 }
 
-@media (max-width: 768px) {
+@include m.to(sm) {
 	.headerNav {
 		display: none;
 	}
+
 	.headerBurger {
 		display: inline-flex;
 	}
+
 	.headerBrandName {
 		display: none;
 	}
+
 	.inner {
-		padding: 32px 20px;
 		align-items: center;
+		padding: 0;
 	}
 }
