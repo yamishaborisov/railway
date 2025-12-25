@@ -1,3 +1,5 @@
+@use 'shared/styles/mixins' as m;
+
 .page {
 	min-height: 100dvh;
 	display: flex;
@@ -59,4 +61,10 @@
 	font-weight: 500;
 	font-family: inherit;
 	margin: 0;
+}
+
+@include m.to(sm) {
+	.main {
+		padding: 20px;
+	}
 }

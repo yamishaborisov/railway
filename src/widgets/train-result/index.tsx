@@ -1,4 +1,3 @@
-import { useNavigate } from '@tanstack/react-router'
 import clsx from 'clsx'
 import { FareOptionCard } from '@/entities/'
 import { Card, TrainResultLabel } from '@/shared'
