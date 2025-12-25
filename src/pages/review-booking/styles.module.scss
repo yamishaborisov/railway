@@ -1,3 +1,5 @@
+@use 'shared/styles/mixins' as m;
+
 .page {
 	min-height: 100dvh;
 	display: flex;
@@ -91,4 +93,33 @@
 	color: var(--primary-black-50);
 	font-size: 12px;
 	text-align: center;
+}
+
+@include m.to(sm) {
+	.main {
+		padding: 20px;
+	}
+
+	.title {
+		font-size: 28px;
+	}
+
+	.mealsSection {
+		flex-direction: row;
+	}
+	.mealsWrapper > :not(:first-child) {
+		display: none;
+	}
+	.viewBtn {
+		align-self: center;
+	}
+	.promoSection {
+		flex-direction: column;
+	}
+	.promoCard {
+		padding: 32px 16px;
+	}
+	.aboutBill {
+		text-align: start;
+	}
 }

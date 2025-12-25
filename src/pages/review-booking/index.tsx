@@ -64,8 +64,8 @@ export const ReviewBooking = () => {
                     <Offers className={styles.offers} offers={demoOffers} />
                 </section>
                 <section className={styles.promoSection}>
-                    <ApplyCode />
-                    <ExtraBaggage />
+                    <ApplyCode className={styles.promoCard} />
+                    <ExtraBaggage className={styles.promoCard} />
                 </section>
                 <BillDetails items={billItems} className={styles.billDet} />
                 <p className={styles.aboutBill}>

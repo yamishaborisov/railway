@@ -1,3 +1,5 @@
+@use 'shared/styles/mixins' as m;
+
 .card {
 	max-width: 640px;
 	display: flex;
@@ -39,6 +41,7 @@
 	align-items: center;
 	width: 592px;
 	justify-content: space-between;
+	font-size: 14px;
 }
 
 .fares {
@@ -88,4 +91,17 @@
 	font-weight: 600;
 	border-top: 1px solid var(--primary-black-10);
 	padding-top: 16px;
+}
+
+@include m.to(sm) {
+	.card {
+		padding: 32px 16px;
+	}
+	.inf {
+		flex-direction: column;
+		align-items: start;
+	}
+	.legs {
+		width: 100%;
+	}
 }
