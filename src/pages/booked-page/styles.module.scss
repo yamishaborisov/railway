@@ -1,3 +1,5 @@
+@use 'shared/styles/mixins' as m;
+
 .page {
 	min-height: 100dvh;
 	display: flex;
@@ -53,4 +55,13 @@
 	font-weight: 400;
 	color: var(--green);
 	text-align: center;
+}
+
+@include m.to(sm) {
+	.main {
+		padding: 20px;
+	}
+	.title {
+		font-size: 24px;
+	}
 }
