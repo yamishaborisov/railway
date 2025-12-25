@@ -1,3 +1,5 @@
+@use 'shared/styles/mixins' as m;
+
 .page {
 	min-height: 100dvh;
 	display: flex;
@@ -54,4 +56,18 @@
 	color: var(--primary-black-50);
 	font-size: 14px;
 	text-decoration: none;
+}
+
+@include m.to(sm) {
+	.main {
+		padding: 20px;
+	}
+
+	.promo {
+		flex-direction: column;
+	}
+
+	.promoCard {
+		padding: 32px 16px;
+	}
 }

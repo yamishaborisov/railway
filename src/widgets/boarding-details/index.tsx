@@ -118,7 +118,7 @@ export const BoardingDetails = ({
                         </div>
                     ))}
                     {traveller.email && (
-                        <div className={styles.travellerRow}>
+                        <div className={styles.travellerEmailRow}>
                             <span>
                                 E-Tickets {isConfirmation ? 'has been' : 'will be'} sent to:
                             </span>

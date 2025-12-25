@@ -53,8 +53,8 @@ export const Payment = () => {
                     <Offers className={styles.offers} offers={demoOffers} />
                 </section>
                 <div className={styles.promo}>
-                    <ApplyCode />
-                    <ExtraBaggage />
+                    <ApplyCode className={styles.promoCard} />
+                    <ExtraBaggage className={styles.promoCard} />
                 </div>
                 <BillDetails items={billItems} className={styles.billDet} />
                 <section className={styles.paymentFormSection}>

@@ -1,3 +1,5 @@
+@use 'shared/styles/mixins' as m;
+
 .form {
 	display: flex;
 	flex-direction: column;
@@ -116,4 +118,10 @@
 .payFormLabel {
 	font-size: 16px;
 	font-weight: 600;
+}
+
+@include m.to(sm) {
+	.fieldRow {
+		grid-template-columns: 1fr;
+	}
 }

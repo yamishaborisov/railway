@@ -73,7 +73,8 @@
 	margin: 0 0 4px;
 }
 
-.travellerRow {
+.travellerRow,
+.travellerEmailRow {
 	display: flex;
 	justify-content: space-between;
 	font-size: 14px;
@@ -103,5 +104,8 @@
 	}
 	.legs {
 		width: 100%;
+	}
+	.travellerEmailRow {
+		flex-direction: column;
 	}
 }
