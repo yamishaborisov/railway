@@ -1,13 +1,18 @@
 @use 'shared/styles/mixins' as m;
 
 .page {
+	position: relative;
 	min-height: 100dvh;
-	background-image: url('/images/start-bg.png');
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
 	color: var(--white);
 	font-family: var(--font-sans);
+}
+
+.page::before {
+	content: '';
+	position: fixed;
+	inset: 0;
+	background: url('/images/start-bg.png') center / cover no-repeat;
+	z-index: -1;
 }
 
 .main {

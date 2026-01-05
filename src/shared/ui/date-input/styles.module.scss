@@ -106,4 +106,18 @@
 		flex-direction: column;
 		gap: 16px;
 	}
+
+	.dateInputWrapper :global(.p-overlaypanel) {
+		width: 100%;
+		padding: 0;
+	}
+
+	.dateInputWrapper
+		:global(.p-datepicker-multiple-month .p-datepicker-group-container) {
+		flex-direction: column;
+	}
+
+	.dateInputWrapper :global(.p-datepicker table td > span) {
+		margin: 8px;
+	}
 }

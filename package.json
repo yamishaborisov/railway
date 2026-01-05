@@ -17,7 +17,7 @@
         "prepare": "husky install"
     },
     "lint-staged": {
-        "*.{js,jsx,ts,tsx,json,css,scss,md}": [
+        "*.{js,jsx,ts,tsx,json,css,md}": [
             "biome format --write",
             "biome check --write"
         ]
